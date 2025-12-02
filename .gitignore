@@ -16,4 +16,21 @@ yarn-error.log
 /.idea
 /.vscode
 
+# Database files
+database/*.sqlite
+database/*.sqlite-journal
+
+# Storage files
+/storage/*.key
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+!/storage/framework/views/.gitkeep
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+# Bootstrap cache
+bootstrap/cache/*
+!bootstrap/cache/.gitkeep
+
 

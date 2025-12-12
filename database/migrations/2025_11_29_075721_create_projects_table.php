@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('projects', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('tool');
-            $table->timestamps();
-        });
+        // Projects table already exists from 2024_01_01_000001_create_projects_table migration
+        // This migration is a duplicate and can be skipped
+        if (!Schema::hasTable('projects')) {
+            Schema::create('projects', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->string('tool');
+                $table->timestamps();
+            });
+        }
     }
 
     /**

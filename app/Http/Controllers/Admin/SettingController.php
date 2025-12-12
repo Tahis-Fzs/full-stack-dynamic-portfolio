@@ -74,11 +74,17 @@ class SettingController extends Controller
 
                 // Save file paths if uploads were successful
                 if ($uploadedProfileImage !== null) {
-                    Setting::set('profile_image', $uploadedProfileImage);
+                    $saved = Setting::set('profile_image', $uploadedProfileImage);
+                    if (!$saved) {
+                        throw new \Exception('Failed to save profile image setting');
+                    }
                 }
 
                 if ($uploadedResumeFile !== null) {
-                    Setting::set('resume_file', $uploadedResumeFile);
+                    $saved = Setting::set('resume_file', $uploadedResumeFile);
+                    if (!$saved) {
+                        throw new \Exception('Failed to save resume file setting');
+                    }
                 }
 
                 // Update text fields only after file uploads succeed

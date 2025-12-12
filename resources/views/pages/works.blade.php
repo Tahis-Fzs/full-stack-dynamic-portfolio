@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Works - Md Julfikar Hasan')
+@section('title', 'Works - Md. Shadman Tahsin')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/works.css') }}">
@@ -76,7 +76,7 @@
 
 @section('footer')
     <footer>
-        <p>&copy; {{ date('Y') }} Md Julfikar Hasan. All rights reserved.</p>
+        <p>&copy; {{ date('Y') }} Md. Shadman Tahsin. All rights reserved.</p>
     </footer>
 @endsection
 

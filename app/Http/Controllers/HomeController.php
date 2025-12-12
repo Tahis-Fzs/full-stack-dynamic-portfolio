@@ -36,7 +36,7 @@ class HomeController extends Controller
     {
         try {
             return [
-                'name' => Setting::get('profile_name', 'Md Julfikar Hasan'),
+                'name' => Setting::get('profile_name', 'Md. Shadman Tahsin'),
                 'role' => Setting::get('profile_role', 'UI/UX DESIGNER'),
                 'bio' => Setting::get('profile_bio', 'UI/UX Designer • Frontend Developer • Creative Problem Solver'),
                 'profile_image' => Setting::get('profile_image', 'assets/images/profile.jpg'),
@@ -47,7 +47,7 @@ class HomeController extends Controller
             ];
         } catch (\Exception $e) {
             return [
-                'name' => 'Md Julfikar Hasan',
+                'name' => 'Md. Shadman Tahsin',
                 'role' => 'UI/UX DESIGNER',
                 'bio' => 'UI/UX Designer • Frontend Developer • Creative Problem Solver',
                 'profile_image' => 'assets/images/profile.jpg',

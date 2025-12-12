@@ -18,7 +18,7 @@ A modern, dynamic portfolio website built with Laravel framework that allows you
 
 This is a fully dynamic portfolio website converted from static HTML/CSS/JavaScript to a Laravel-based Content Management System (CMS). You can easily manage all portfolio content including projects, skills, experiences, and settings through a beautiful admin panel without touching any code.
 
-**Owner:** Md Julfikar Hasan  
+**Owner:** Md. Shadman Tahsin  
 **Type:** Portfolio Website with Admin Panel  
 **Status:** Production Ready ✅
 

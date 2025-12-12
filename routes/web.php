@@ -5,12 +5,18 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\WorksController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TestimonialsController;
 use App\Http\Controllers\Auth\LoginController;
 
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/works', [WorksController::class, 'index'])->name('works');
+Route::get('/services', [ServicesController::class, 'index'])->name('services');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/testimonials', [TestimonialsController::class, 'index'])->name('testimonials');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 

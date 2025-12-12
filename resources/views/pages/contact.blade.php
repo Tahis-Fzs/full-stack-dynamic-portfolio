@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact - Md Julfikar Hasan')
+@section('title', 'Contact - Md. Shadman Tahsin')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/contact.css') }}">
@@ -15,7 +15,7 @@
                 <p>📨 Email: {{ $settings['email'] ?? 'mdjulfikerhasan191212@gmail.com' }}</p>
                 <p>📱 Mobile: {{ $settings['phone'] ?? '+8801890770297' }}</p>
                 <p>🌍 Location: {{ $settings['location'] ?? 'Bangladesh' }}</p>
-                <p>🎨 Portfolio: Behance – Md Julfikar Hasan</p>
+                <p>🎨 Portfolio: Behance – Md. Shadman Tahsin</p>
                 
                 <div class="social-links">
                     <h4>Connect with me</h4>
@@ -76,7 +76,7 @@
     <footer>
         <div class="footer-content">
             <p class="tagline">"Design isn't just about how it looks — it's about how it feels, how it works, and how it connects with people."</p>
-            <p class="copyright">&copy; {{ date('Y') }} Md Julfikar Hasan. All rights reserved.</p>
+            <p class="copyright">&copy; {{ date('Y') }} Md. Shadman Tahsin. All rights reserved.</p>
         </div>
     </footer>
 @endsection

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Md Julfikar Hasan - Portfolio')
+@section('title', 'Md. Shadman Tahsin - Portfolio')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
@@ -13,11 +13,30 @@
             <a href="{{ route('about') }}" class="profile-card large-card card-link">
                 <div class="profile-content">
                     <div class="profile-image">
-                        <img src="{{ asset('assets/images/profile.jpg') }}" alt="Md Julfikar Hasan">
+                        @php
+                            $imagePath = $settings['profile_image'] ?? 'assets/images/profile.jpg';
+                            // If path starts with 'profile/' or 'resume/', it's from storage, else it's from assets
+                            if (strpos($imagePath, 'profile/') === 0 || strpos($imagePath, 'resume/') === 0) {
+                                // Use Storage facade to generate correct URL
+                                $imageUrl = \Illuminate\Support\Facades\Storage::disk('public')->url($imagePath);
+                                // Add cache-busting parameter based on file modification time
+                                try {
+                                    $fullPath = storage_path('app/public/' . $imagePath);
+                                    if (file_exists($fullPath)) {
+                                        $imageUrl .= '?v=' . filemtime($fullPath);
+                                    }
+                                } catch (\Exception $e) {
+                                    // If file doesn't exist or can't get mtime, just use URL without cache-busting
+                                }
+                            } else {
+                                $imageUrl = asset($imagePath);
+                            }
+                        @endphp
+                        <img src="{{ $imageUrl }}" alt="{{ $settings['name'] ?? 'Md. Shadman Tahsin' }}" onerror="this.src='{{ asset('assets/images/profile.jpg') }}'">
                     </div>
                     <div class="profile-info">
                         <span class="role">{{ $settings['role'] ?? 'UI/UX DESIGNER' }}</span>
-                        <h1>{{ $settings['name'] ?? 'Md Julfikar Hasan' }}</h1>
+                        <h1>{{ $settings['name'] ?? 'Md. Shadman Tahsin' }}</h1>
                         <p>{{ $settings['bio'] ?? 'UI/UX Designer • Frontend Developer • Creative Problem Solver' }}</p>
                         <div class="more-icon">→</div>
                     </div>

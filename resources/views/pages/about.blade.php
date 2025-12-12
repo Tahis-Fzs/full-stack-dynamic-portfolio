@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'About - Md Julfikar Hasan')
+@section('title', 'About - Md. Shadman Tahsin')
 
 @push('styles')
     <link rel="stylesheet" href="{{ asset('css/about.css') }}">
@@ -10,9 +10,18 @@
     <section class="about-section">
         <h1>About Me</h1>
         <div class="about-content">
-            <img src="{{ asset('assets/images/profile.jpg') }}" alt="Md Julfikar Hasan" class="about-img">
+            @php
+                $imagePath = $settings['profile_image'] ?? 'assets/images/profile.jpg';
+                if (strpos($imagePath, 'profile/') === 0 || strpos($imagePath, 'resume/') === 0) {
+                    // Use Storage facade to generate correct URL
+                    $imageUrl = \Illuminate\Support\Facades\Storage::disk('public')->url($imagePath);
+                } else {
+                    $imageUrl = asset($imagePath);
+                }
+            @endphp
+            <img src="{{ $imageUrl }}" alt="Md. Shadman Tahsin" class="about-img" onerror="this.src='{{ asset('assets/images/profile.jpg') }}'">
             <div class="about-text">
-                <p>{{ $settings['about_text_1'] ?? '👋 Hi, I\'m Md Julfikar Hasan – UI/UX Designer' }}</p>
+                <p>{{ $settings['about_text_1'] ?? '👋 Hi, I\'m Md. Shadman Tahsin – UI/UX Designer' }}</p>
                 <p>{{ $settings['about_text_2'] ?? 'I design intuitive digital experiences that solve real problems and bring ideas to life. Passionate about user-centered design, AI-driven workflows, and creating products that people love to use.' }}</p>
                 <p>{{ $settings['about_text_3'] ?? 'I\'m currently pursuing my BSc in Computer Science & Engineering at Daffodil International University, blending technical understanding with creative design skills. My approach is driven by user-centered design thinking, rapid prototyping in Figma, and a love for solving complex design challenges with simple, functional solutions.' }}</p>
                 <p>I enjoy exploring the intersection of design and AI, using tools like ChatGPT and AI-powered plugins to enhance creativity and accelerate workflows — while always keeping the human touch at the core of my work.</p>
@@ -116,7 +125,7 @@
 
 @section('footer')
     <footer>
-        <p>&copy; {{ date('Y') }} Md Julfikar Hasan. All rights reserved.</p>
+        <p>&copy; {{ date('Y') }} Md. Shadman Tahsin. All rights reserved.</p>
     </footer>
 @endsection
 

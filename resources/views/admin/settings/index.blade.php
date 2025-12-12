@@ -22,7 +22,31 @@
         </div>
         <div>
             <label>Profile Image</label>
+            @if(isset($settings['profile_image']))
+                @php
+                    $imagePath = $settings['profile_image'];
+                    if (strpos($imagePath, 'profile/') === 0 || strpos($imagePath, 'resume/') === 0) {
+                        // Use Storage facade to generate correct URL
+                        $imageUrl = \Illuminate\Support\Facades\Storage::disk('public')->url($imagePath);
+                        // Add cache-busting parameter based on file modification time
+                        try {
+                            $fullPath = storage_path('app/public/' . $imagePath);
+                            if (file_exists($fullPath)) {
+                                $imageUrl .= '?v=' . filemtime($fullPath);
+                            }
+                        } catch (\Exception $e) {
+                            // If file doesn't exist or can't get mtime, just use URL without cache-busting
+                        }
+                    } else {
+                        $imageUrl = asset($imagePath);
+                    }
+                @endphp
+                <div style="margin-bottom: 1rem;">
+                    <img src="{{ $imageUrl }}" alt="Current Profile Image" style="max-width: 200px; height: auto; border-radius: 8px; border: 1px solid #ddd;" onerror="this.src='{{ asset('assets/images/profile.jpg') }}'">
+                </div>
+            @endif
             <input type="file" name="profile_image" accept="image/*">
+            <small style="display: block; color: #666; margin-top: 0.5rem;">Current: {{ $settings['profile_image'] ?? 'assets/images/profile.jpg' }}</small>
         </div>
         <div>
             <label>Resume File</label>

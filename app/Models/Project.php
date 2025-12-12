@@ -13,7 +13,6 @@ class Project extends Model
         'title',
         'description',
         'image',
-        'icon',
         'tech_tags',
         'category',
         'project_url',

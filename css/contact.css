@@ -6,9 +6,18 @@
 
 body {
     font-family: 'Inter', 'Arial', sans-serif;
-    background: #0a0a0a;
-    color: #00ff88;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 25%, #2196f3 50%, #03a9f4 75%, #00bcd4 100%);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    color: #1a1a2e;
     line-height: 1.6;
+    min-height: 100vh;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Header */
@@ -17,8 +26,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    background: #0a0a0a;
-    border-bottom: 1px solid #1a1a1a;
+    background: linear-gradient(135deg, rgba(139, 195, 74, 0.15) 0%, rgba(33, 150, 243, 0.15) 100%);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -30,14 +41,18 @@ header {
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #00ff88;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .logo-dot {
     width: 8px;
     height: 8px;
-    background: #00ff88;
+    background: linear-gradient(135deg, #8bc34a, #2196f3);
     border-radius: 50%;
+    box-shadow: 0 0 10px rgba(139, 195, 74, 0.5);
 }
 
 nav ul {
@@ -47,32 +62,42 @@ nav ul {
 }
 
 nav a {
-    color: #00ff88;
+    color: #1a1a2e;
     text-decoration: none;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: all 0.3s;
+    position: relative;
 }
 
-nav a:hover {
-    color: #00ff88;
+nav a:hover, nav a.active {
+    color: #1a1a2e;
 }
 
-nav a.active {
-    color: #00ff88;
+nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #8bc34a, #2196f3);
+    border-radius: 2px;
 }
 
 .resume-btn {
-    background: #1a1a1a;
-    color: #00ff88;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 100%);
+    color: #ffffff;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
-    transition: background 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
 }
 
 .resume-btn:hover {
-    background: #2a2a2a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(139, 195, 74, 0.4);
 }
 
 /* Main Content */
@@ -91,7 +116,10 @@ main {
     margin-bottom: 4rem;
     font-size: 3rem;
     font-weight: 700;
-    color: #00ff88;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     position: relative;
 }
 
@@ -103,7 +131,7 @@ main {
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: linear-gradient(45deg, #00ff88, #0088ff);
+    background: linear-gradient(90deg, #8bc34a, #2196f3);
     border-radius: 2px;
 }
 
@@ -115,15 +143,19 @@ main {
 }
 
 .contact-info {
-    background: #1a1a1a;
+    background: linear-gradient(135deg, rgba(139, 195, 74, 0.25) 0%, rgba(33, 150, 243, 0.25) 100%);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 3rem;
-    border: 1px solid #2a2a2a;
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+    border: 2px solid rgba(139, 195, 74, 0.4);
+    box-shadow: 0 8px 32px rgba(139, 195, 74, 0.3);
 }
 
 .contact-info h3 {
-    color: #00ff88;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 2rem;
     font-size: 1.8rem;
     font-weight: 600;
@@ -131,8 +163,9 @@ main {
 
 .contact-info p {
     margin-bottom: 1rem;
-    color: #6b7280;
+    color: #1a1a2e;
     font-size: 1.1rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -142,16 +175,17 @@ main {
     content: '';
     width: 8px;
     height: 8px;
-    background: #00ff88;
+    background: linear-gradient(135deg, #8bc34a, #2196f3);
     border-radius: 50%;
 }
 
 .contact-form {
-    background: #1a1a1a;
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.25) 0%, rgba(139, 195, 74, 0.25) 100%);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 3rem;
-    border: 1px solid #2a2a2a;
-    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+    border: 2px solid rgba(33, 150, 243, 0.4);
+    box-shadow: 0 8px 32px rgba(33, 150, 243, 0.3);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -160,25 +194,28 @@ main {
 .contact-form input,
 .contact-form textarea {
     padding: 1.2rem;
-    border: 1px solid #e5e7eb;
+    border: 2px solid rgba(139, 195, 74, 0.3);
     border-radius: 12px;
     font-size: 1rem;
     font-family: inherit;
-    background: #ffffff;
-    color: #1f2937;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    background: rgba(255, 255, 255, 0.9);
+    color: #1a1a2e;
+    font-weight: 500;
+    transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: #00ff88;
-    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+    border-color: rgba(139, 195, 74, 0.6);
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 3px rgba(139, 195, 74, 0.2);
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #9ca3af;
+    color: #4a5568;
+    font-weight: 500;
 }
 
 .contact-form textarea {
@@ -187,8 +224,8 @@ main {
 }
 
 .contact-form button {
-    background: linear-gradient(45deg, #00ff88, #0088ff);
-    color: #0a0a0a;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 100%);
+    color: #ffffff;
     padding: 1.2rem;
     border: none;
     border-radius: 12px;
@@ -196,11 +233,12 @@ main {
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
 }
 
 .contact-form button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 6px 20px rgba(139, 195, 74, 0.4);
 }
 
 /* Social Links */
@@ -210,7 +248,10 @@ main {
 }
 
 .social-links h4 {
-    color: #00ff88;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
 }
@@ -242,10 +283,10 @@ main {
 }
 
 .social-link:hover {
-    background: #00ff88;
-    color: #0a0a0a;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 100%);
+    color: #ffffff;
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+    box-shadow: 0 5px 15px rgba(139, 195, 74, 0.3);
 }
 
 .social-link:hover svg {
@@ -268,7 +309,10 @@ footer {
 
 .tagline {
     font-size: 1.2rem;
-    color: #00ff88;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-style: italic;
     margin-bottom: 2rem;
     line-height: 1.6;
@@ -278,7 +322,10 @@ footer {
 .tagline::before {
     content: '"';
     font-size: 3rem;
-    color: #00ff88;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     position: absolute;
     top: -20px;
     left: -30px;
@@ -288,7 +335,10 @@ footer {
 .tagline::after {
     content: '"';
     font-size: 3rem;
-    color: #00ff88;
+    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     position: absolute;
     bottom: -40px;
     right: -30px;
@@ -296,7 +346,7 @@ footer {
 }
 
 .copyright {
-    color: #6b7280;
+    color: #1a1a2e;
     font-size: 0.9rem;
 }
 

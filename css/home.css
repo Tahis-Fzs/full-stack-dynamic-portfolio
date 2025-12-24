@@ -6,10 +6,10 @@
 
 body {
     font-family: 'Inter', 'Arial', sans-serif;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 25%, #2196f3 50%, #03a9f4 75%, #00bcd4 100%);
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1a1a2e 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
-    color: #1a1a2e;
+    color: #e0e0e0;
     line-height: 1.6;
     min-height: 100vh;
 }
@@ -26,10 +26,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, rgba(139, 195, 74, 0.15) 0%, rgba(33, 150, 243, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.8) 0%, rgba(26, 26, 46, 0.8) 100%);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -41,7 +41,7 @@ header {
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -50,9 +50,9 @@ header {
 .logo-dot {
     width: 8px;
     height: 8px;
-    background: linear-gradient(135deg, #8bc34a, #2196f3);
+    background: linear-gradient(135deg, #64b5f6, #90caf9);
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(139, 195, 74, 0.5);
+    box-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
 }
 
 nav ul {
@@ -62,7 +62,7 @@ nav ul {
 }
 
 nav a {
-    color: #1a1a2e;
+    color: #e0e0e0;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s;
@@ -70,11 +70,11 @@ nav a {
 }
 
 nav a:hover {
-    color: #1a1a2e;
+    color: #ffffff;
 }
 
 nav a.active {
-    color: #1a1a2e;
+    color: #ffffff;
 }
 
 nav a.active::after {
@@ -84,24 +84,24 @@ nav a.active::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, #8bc34a, #2196f3);
+    background: linear-gradient(90deg, #64b5f6, #90caf9);
     border-radius: 2px;
 }
 
 .resume-btn {
-    background: linear-gradient(135deg, #8bc34a 0%, #2196f3 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #64b5f6 0%, #90caf9 100%);
+    color: #0f0f0f;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+    box-shadow: 0 4px 15px rgba(100, 181, 246, 0.3);
 }
 
 .resume-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(139, 195, 74, 0.4);
+    box-shadow: 0 6px 20px rgba(100, 181, 246, 0.5);
 }
 
 /* Main Content */
@@ -132,21 +132,21 @@ main {
 
 /* Cards */
 .card, .large-card {
-    background: linear-gradient(135deg, rgba(139, 195, 74, 0.15) 0%, rgba(33, 150, 243, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.6) 0%, rgba(26, 26, 46, 0.6) 100%);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 2rem;
-    border: 2px solid rgba(139, 195, 74, 0.3);
+    border: 2px solid rgba(100, 181, 246, 0.2);
     transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
     position: relative;
-    box-shadow: 0 8px 32px rgba(139, 195, 74, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .card:hover, .large-card:hover {
     transform: translateY(-4px);
-    background: linear-gradient(135deg, rgba(139, 195, 74, 0.25) 0%, rgba(33, 150, 243, 0.25) 100%);
-    box-shadow: 0 15px 40px rgba(139, 195, 74, 0.3);
-    border-color: rgba(139, 195, 74, 0.5);
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.8) 0%, rgba(26, 26, 46, 0.8) 100%);
+    box-shadow: 0 15px 40px rgba(100, 181, 246, 0.3);
+    border-color: rgba(100, 181, 246, 0.4);
 }
 
 /* Profile Card */
@@ -166,9 +166,9 @@ main {
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid transparent;
-    background: linear-gradient(135deg, #8bc34a, #2196f3) padding-box,
-                linear-gradient(135deg, #8bc34a, #2196f3) border-box;
-    box-shadow: 0 0 20px rgba(139, 195, 74, 0.3);
+    background: linear-gradient(135deg, #64b5f6, #90caf9) padding-box,
+                linear-gradient(135deg, #64b5f6, #90caf9) border-box;
+    box-shadow: 0 0 20px rgba(100, 181, 246, 0.3);
 }
 
 .profile-info {
@@ -177,7 +177,7 @@ main {
 }
 
 .role {
-    color: #1a1a2e;
+    color: #b0b0b0;
     font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -188,14 +188,14 @@ main {
     font-size: 2.5rem;
     font-weight: 700;
     margin: 0.5rem 0;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .profile-info p {
-    color: #1a1a2e;
+    color: #e0e0e0;
     font-size: 1rem;
     margin-bottom: 1rem;
     font-weight: 500;
@@ -203,19 +203,19 @@ main {
 
 /* Projects Banner */
 .projects-banner {
-    background: linear-gradient(135deg, rgba(33, 150, 243, 0.2) 0%, rgba(139, 195, 74, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.6) 0%, rgba(26, 26, 46, 0.6) 100%);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 1.5rem;
-    border: 2px solid rgba(33, 150, 243, 0.3);
+    border: 2px solid rgba(100, 181, 246, 0.2);
     display: flex;
     align-items: center;
     font-size: 0.9rem;
-    color: #1a1a2e;
+    color: #e0e0e0;
     font-weight: 600;
     grid-column: 2;
     grid-row: 1;
-    box-shadow: 0 8px 32px rgba(33, 150, 243, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 /* Small Cards */
@@ -236,11 +236,11 @@ main {
 .signature-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     border-radius: 50%;
     margin-bottom: 1rem;
     position: relative;
-    box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+    box-shadow: 0 4px 15px rgba(100, 181, 246, 0.3);
 }
 
 .signature-icon::after {
@@ -253,7 +253,7 @@ main {
 }
 
 .card-label {
-    color: #1a1a2e;
+    color: #b0b0b0;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1px;
@@ -264,7 +264,7 @@ main {
 .card-content h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -284,7 +284,7 @@ main {
 .device {
     width: 30px;
     height: 40px;
-    background: #e5e7eb;
+    background: #2a2a2a;
     border-radius: 4px;
     position: relative;
 }
@@ -308,15 +308,15 @@ main {
 
 /* Stats Card */
 .stats-card {
-    background: linear-gradient(135deg, rgba(139, 195, 74, 0.2) 0%, rgba(33, 150, 243, 0.2) 100%);
+    background: linear-gradient(135deg, rgba(15, 15, 15, 0.6) 0%, rgba(26, 26, 46, 0.6) 100%);
     backdrop-filter: blur(10px);
     border-radius: 16px;
     padding: 2rem;
-    border: 2px solid rgba(139, 195, 74, 0.4);
+    border: 2px solid rgba(100, 181, 246, 0.3);
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-shadow: 0 8px 32px rgba(139, 195, 74, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .stat-item {
@@ -327,7 +327,7 @@ main {
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -335,7 +335,7 @@ main {
 }
 
 .stat-label {
-    color: #1a1a2e;
+    color: #e0e0e0;
     font-size: 0.8rem;
     font-weight: 700;
     letter-spacing: 1px;
@@ -351,7 +351,7 @@ main {
     position: absolute;
     top: 1rem;
     left: 1rem;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -361,14 +361,14 @@ main {
 .work-together-card h2 {
     font-size: 2rem;
     font-weight: 600;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .highlight {
-    background: linear-gradient(135deg, #7cb342 0%, #03a9f4 100%);
+    background: linear-gradient(135deg, #42a5f5 0%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -381,23 +381,23 @@ main {
     right: 1rem;
     width: 32px;
     height: 32px;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: #0f0f0f;
     font-size: 1.2rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     user-select: none;
-    box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+    box-shadow: 0 4px 15px rgba(100, 181, 246, 0.3);
 }
 
 .more-icon:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(139, 195, 74, 0.5);
+    box-shadow: 0 6px 20px rgba(100, 181, 246, 0.5);
 }
 
 .more-icon:active {

@@ -24,13 +24,14 @@ class SettingController extends Controller
             'about_text_1' => Setting::get('about_text_1', '👋 Hi, I\'m Md. Shadman Tahsin – UI/UX Designer'),
             'about_text_2' => Setting::get('about_text_2', 'I design intuitive digital experiences...'),
             'about_text_3' => Setting::get('about_text_3', 'I\'m currently pursuing my BSc...'),
-            'contact_email' => Setting::get('contact_email', 'mdjulfikerhasan191212@gmail.com'),
-            'contact_phone' => Setting::get('contact_phone', '+8801890770297'),
+            'contact_email' => Setting::get('contact_email', 'md.shadmantahsinfzs@gmail.com'),
+            'contact_phone' => Setting::get('contact_phone', '01764819519'),
             'contact_location' => Setting::get('contact_location', 'Bangladesh'),
-            'behance_url' => Setting::get('behance_url', 'https://www.behance.net/mdjulfikerhasan'),
-            'linkedin_url' => Setting::get('linkedin_url', 'https://www.linkedin.com/in/md-julfikar-hasan-282249215'),
-            'dribbble_url' => Setting::get('dribbble_url', 'https://dribbble.com/hasan1912'),
-            'github_url' => Setting::get('github_url', 'https://github.com/Julfiker-NpM'),
+            'behance_url' => Setting::get('behance_url', 'https://www.behance.net/mdsha0242220'),
+            'linkedin_url' => Setting::get('linkedin_url', 'https://www.linkedin.com/in/md-shadman-tahsin-676a862b4'),
+            'dribbble_url' => Setting::get('dribbble_url', ''),
+            'github_url' => Setting::get('github_url', 'https://github.com/Tahis-Fzs'),
+            'facebook_url' => Setting::get('facebook_url', 'https://www.facebook.com/share/17ZhPouzcB/'),
         ];
 
         return view('admin.settings.index', compact('settings'));
@@ -92,7 +93,7 @@ class SettingController extends Controller
                     'profile_name', 'profile_role', 'profile_bio', 'experience_years',
                     'clients_count', 'projects_count', 'about_text_1', 'about_text_2',
                     'about_text_3', 'contact_email', 'contact_phone', 'contact_location',
-                    'behance_url', 'linkedin_url', 'dribbble_url', 'github_url'
+                    'behance_url', 'linkedin_url', 'dribbble_url', 'github_url', 'facebook_url'
                 ];
 
                 foreach ($fields as $field) {

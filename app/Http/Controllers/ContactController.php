@@ -13,23 +13,25 @@ class ContactController extends Controller
     {
         try {
             $settings = [
-                'email' => Setting::get('contact_email', 'mdjulfikerhasan191212@gmail.com'),
-                'phone' => Setting::get('contact_phone', '+8801890770297'),
+                'email' => Setting::get('contact_email', 'md.shadmantahsinfzs@gmail.com'),
+                'phone' => Setting::get('contact_phone', '01764819519'),
                 'location' => Setting::get('contact_location', 'Bangladesh'),
-                'behance_url' => Setting::get('behance_url', 'https://www.behance.net/mdjulfikerhasan'),
-                'linkedin_url' => Setting::get('linkedin_url', 'https://www.linkedin.com/in/md-julfikar-hasan-282249215'),
-                'dribbble_url' => Setting::get('dribbble_url', 'https://dribbble.com/hasan1912'),
-                'github_url' => Setting::get('github_url', 'https://github.com/Julfiker-NpM'),
+                'behance_url' => Setting::get('behance_url', 'https://www.behance.net/mdsha0242220'),
+                'linkedin_url' => Setting::get('linkedin_url', 'https://www.linkedin.com/in/md-shadman-tahsin-676a862b4'),
+                'dribbble_url' => Setting::get('dribbble_url', ''),
+                'github_url' => Setting::get('github_url', 'https://github.com/Tahis-Fzs'),
+                'facebook_url' => Setting::get('facebook_url', 'https://www.facebook.com/share/17ZhPouzcB/'),
             ];
         } catch (\Exception $e) {
             $settings = [
-                'email' => 'mdjulfikerhasan191212@gmail.com',
-                'phone' => '+8801890770297',
+                'email' => 'md.shadmantahsinfzs@gmail.com',
+                'phone' => '01764819519',
                 'location' => 'Bangladesh',
-                'behance_url' => 'https://www.behance.net/mdjulfikerhasan',
-                'linkedin_url' => 'https://www.linkedin.com/in/md-julfikar-hasan-282249215',
-                'dribbble_url' => 'https://dribbble.com/hasan1912',
-                'github_url' => 'https://github.com/Julfiker-NpM',
+                'behance_url' => 'https://www.behance.net/mdsha0242220',
+                'linkedin_url' => 'https://www.linkedin.com/in/md-shadman-tahsin-676a862b4',
+                'dribbble_url' => '',
+                'github_url' => 'https://github.com/Tahis-Fzs',
+                'facebook_url' => 'https://www.facebook.com/share/17ZhPouzcB/',
             ];
         }
         

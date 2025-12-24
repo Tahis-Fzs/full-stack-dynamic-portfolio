@@ -112,6 +112,10 @@
             <label>GitHub URL</label>
             <input type="url" name="github_url" value="{{ $settings['github_url'] ?? '' }}">
         </div>
+        <div>
+            <label>Facebook URL</label>
+            <input type="url" name="facebook_url" value="{{ $settings['facebook_url'] ?? '' }}">
+        </div>
         
         <div style="margin-top: 2rem;">
             <button type="submit" class="btn btn-primary">Save Settings</button>

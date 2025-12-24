@@ -6,10 +6,10 @@
 
 body {
     font-family: 'Inter', 'Arial', sans-serif;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 25%, #2196f3 50%, #03a9f4 75%, #00bcd4 100%);
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #1a1a2e 100%);
     background-size: 400% 400%;
     animation: gradientShift 15s ease infinite;
-    color: #1a1a2e;
+    color: #e0e0e0;
     line-height: 1.6;
     min-height: 100vh;
 }
@@ -25,10 +25,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, rgba(139, 195, 74, 0.15) 0%, rgba(33, 150, 243, 0.15) 100%);
+    background: linear-gradient(135deg, rgba(100, 181, 246, 0.15) 0%, rgba(100, 181, 246, 0.15) 100%);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .logo {
@@ -40,7 +40,7 @@ header {
 .logo-text {
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -49,9 +49,9 @@ header {
 .logo-dot {
     width: 8px;
     height: 8px;
-    background: linear-gradient(135deg, #8bc34a, #2196f3);
+    background: linear-gradient(135deg, #64b5f6, #90caf9);
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(139, 195, 74, 0.5);
+    box-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
 }
 
 nav ul {
@@ -61,7 +61,7 @@ nav ul {
 }
 
 nav a {
-    color: #1a1a2e;
+    color: #e0e0e0;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s;
@@ -69,7 +69,7 @@ nav a {
 }
 
 nav a:hover, nav a.active {
-    color: #1a1a2e;
+    color: #e0e0e0;
 }
 
 nav a.active::after {
@@ -79,24 +79,24 @@ nav a.active::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, #8bc34a, #2196f3);
+    background: linear-gradient(90deg, #64b5f6, #90caf9);
     border-radius: 2px;
 }
 
 .resume-btn {
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+    color: #0f0f0f;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 500;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+    box-shadow: 0 4px 15px rgba(100, 181, 246, 0.3);
 }
 
 .resume-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(139, 195, 74, 0.4);
+    box-shadow: 0 6px 20px rgba(100, 181, 246, 0.4);
 }
 
 main {
@@ -114,7 +114,7 @@ main {
     margin-bottom: 1rem;
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -128,20 +128,20 @@ main {
 }
 
 .service-card {
-    background: linear-gradient(135deg, rgba(139, 195, 74, 0.3) 0%, rgba(33, 150, 243, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(100, 181, 246, 0.3) 0%, rgba(100, 181, 246, 0.3) 100%);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 2.5rem;
-    border: 2px solid rgba(139, 195, 74, 0.4);
-    box-shadow: 0 8px 32px rgba(139, 195, 74, 0.25);
+    border: 2px solid rgba(100, 181, 246, 0.4);
+    box-shadow: 0 8px 32px rgba(100, 181, 246, 0.25);
     transition: all 0.3s;
 }
 
 .service-card:hover {
     transform: translateY(-8px);
-    background: linear-gradient(135deg, rgba(139, 195, 74, 0.4) 0%, rgba(33, 150, 243, 0.4) 100%);
-    box-shadow: 0 15px 40px rgba(139, 195, 74, 0.35);
-    border-color: rgba(139, 195, 74, 0.6);
+    background: linear-gradient(135deg, rgba(100, 181, 246, 0.4) 0%, rgba(100, 181, 246, 0.4) 100%);
+    box-shadow: 0 15px 40px rgba(100, 181, 246, 0.35);
+    border-color: rgba(100, 181, 246, 0.6);
 }
 
 .service-icon {
@@ -152,14 +152,14 @@ main {
 .service-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .service-card p {
-    color: #1a1a2e;
+    color: #e0e0e0;
     margin-bottom: 1.5rem;
     line-height: 1.6;
     font-weight: 500;
@@ -171,7 +171,7 @@ main {
 }
 
 .service-card ul li {
-    color: #1a1a2e;
+    color: #e0e0e0;
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
@@ -182,32 +182,32 @@ main {
     content: '✓';
     position: absolute;
     left: 0;
-    color: #1a1a2e;
+    color: #e0e0e0;
     font-weight: bold;
 }
 
 .cta-section {
     margin-top: 4rem;
     text-align: center;
-    background: linear-gradient(135deg, rgba(139, 195, 74, 0.3) 0%, rgba(33, 150, 243, 0.3) 100%);
+    background: linear-gradient(135deg, rgba(100, 181, 246, 0.3) 0%, rgba(100, 181, 246, 0.3) 100%);
     backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 3rem;
-    border: 2px solid rgba(139, 195, 74, 0.4);
-    box-shadow: 0 8px 32px rgba(139, 195, 74, 0.3);
+    border: 2px solid rgba(100, 181, 246, 0.4);
+    box-shadow: 0 8px 32px rgba(100, 181, 246, 0.3);
 }
 
 .cta-section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 50%, #2196f3 100%);
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 50%, #90caf9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .cta-section p {
-    color: #1a1a2e;
+    color: #e0e0e0;
     margin-bottom: 2rem;
     font-size: 1.1rem;
     font-weight: 600;
@@ -215,19 +215,19 @@ main {
 
 .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, #8bc34a 0%, #7cb342 100%);
-    color: #ffffff;
+    background: linear-gradient(135deg, #64b5f6 0%, #42a5f5 100%);
+    color: #0f0f0f;
     padding: 1rem 2.5rem;
     text-decoration: none;
     border-radius: 12px;
     font-weight: 600;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+    box-shadow: 0 4px 15px rgba(100, 181, 246, 0.3);
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(139, 195, 74, 0.4);
+    box-shadow: 0 6px 20px rgba(100, 181, 246, 0.4);
 }
 
 @media (max-width: 768px) {

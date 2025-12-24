@@ -202,13 +202,14 @@ class InitialDataSeeder extends Seeder
             'about_text_1' => '👋 Hi, I\'m Md. Shadman Tahsin – UI/UX Designer',
             'about_text_2' => 'I design intuitive digital experiences that solve real problems and bring ideas to life. Passionate about user-centered design, AI-driven workflows, and creating products that people love to use.',
             'about_text_3' => 'I\'m currently pursuing my BSc in Computer Science & Engineering at Daffodil International University, blending technical understanding with creative design skills. My approach is driven by user-centered design thinking, rapid prototyping in Figma, and a love for solving complex design challenges with simple, functional solutions.',
-            'contact_email' => 'mdjulfikerhasan191212@gmail.com',
-            'contact_phone' => '+8801890770297',
+            'contact_email' => 'md.shadmantahsinfzs@gmail.com',
+            'contact_phone' => '01764819519',
             'contact_location' => 'Bangladesh',
-            'behance_url' => 'https://www.behance.net/mdjulfikerhasan',
-            'linkedin_url' => 'https://www.linkedin.com/in/md-julfikar-hasan-282249215',
-            'dribbble_url' => 'https://dribbble.com/hasan1912',
-            'github_url' => 'https://github.com/Julfiker-NpM',
+            'behance_url' => 'https://www.behance.net/mdsha0242220',
+            'linkedin_url' => 'https://www.linkedin.com/in/md-shadman-tahsin-676a862b4',
+            'dribbble_url' => '',
+            'github_url' => 'https://github.com/Tahis-Fzs',
+            'facebook_url' => 'https://www.facebook.com/share/17ZhPouzcB/',
         ];
 
         foreach ($defaultSettings as $key => $value) {

@@ -72,6 +72,7 @@ export interface SiteConfig {
   linkedin: string;
   linkedinUrl: string;
   cvPath: string;
+  profileImage: string;
   education: {
     degree: string;
     institution: string;

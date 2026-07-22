@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/container";
+import { ProfilePhoto } from "@/components/layout/profile-photo";
 import { cn } from "@/lib/cn";
 
 export function AboutPageContent() {
@@ -20,6 +21,9 @@ export function AboutPageContent() {
     <>
       <section className="border-b border-[var(--border-subtle)] pb-16 pt-12 sm:pt-16">
         <Container>
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-12">
+            <ProfilePhoto size="xl" priority className="mx-auto shrink-0 lg:mx-0" />
+            <div>
           <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-cyan)]">
             About
           </p>
@@ -45,6 +49,8 @@ export function AboutPageContent() {
               <Mail className="size-3.5" aria-hidden />
               {site.email}
             </Link>
+          </div>
+            </div>
           </div>
         </Container>
       </section>

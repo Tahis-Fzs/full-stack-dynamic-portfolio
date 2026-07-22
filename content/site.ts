@@ -19,6 +19,7 @@ export const site: SiteConfig = {
   linkedin: "md-shadman-tahsin-676a862b4",
   linkedinUrl: "https://linkedin.com/in/md-shadman-tahsin-676a862b4",
   cvPath: "/cv/Md_Shadman_Tahsin_CV.pdf",
+  profileImage: "/profile.jpg",
   education: {
     degree: "B.Sc. Computer Science & Engineering",
     institution: "Daffodil International University (DIU)",

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, Download } from "lucide-react";
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/container";
+import { ProfilePhoto } from "@/components/layout/profile-photo";
 import { truncate } from "@/lib/projects-ui";
 import {
   ConstellationCanvas,
@@ -41,6 +42,14 @@ export function ConstellationHero() {
       <div className="pointer-events-none relative z-[2] flex min-h-[92dvh] flex-col">
         <Container className="flex flex-1 flex-col justify-between py-10 sm:py-14">
           <div className="pointer-events-auto max-w-xl">
+            <div className="flex items-start gap-4">
+              <ProfilePhoto
+                size="md"
+                rounded="full"
+                priority
+                className="hidden border-[var(--border-accent)] sm:block"
+              />
+              <div>
             <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-cyan)]">
               Engineer mode · Project constellation
             </p>
@@ -53,6 +62,8 @@ export function ConstellationHero() {
             <p className="mt-2 text-xs text-[var(--text-dim)]">
               Hover nodes · click to open case study
             </p>
+              </div>
+            </div>
           </div>
 
           {activeProject && (

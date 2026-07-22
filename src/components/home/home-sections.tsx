@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/container";
+import { ProfilePhoto } from "@/components/layout/profile-photo";
 
 export function HomeHero() {
   return (
@@ -19,7 +20,8 @@ export function HomeHero() {
       </div>
 
       <Container className="relative">
-        <div className="max-w-4xl">
+        <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+          <div className="max-w-4xl">
           <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--text-dim)]">
             <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-3 py-1">
               <MapPin className="size-3 text-[var(--accent-cyan)]" aria-hidden />
@@ -65,6 +67,9 @@ export function HomeHero() {
               Contact
             </Link>
           </div>
+          </div>
+
+          <ProfilePhoto size="xl" priority className="mx-auto lg:mx-0" />
         </div>
       </Container>
     </section>

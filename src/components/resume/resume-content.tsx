@@ -7,6 +7,7 @@ import { resumeContent, resumeSections } from "@/content/resume";
 import { site } from "@/content/site";
 import { useActiveSection } from "@/components/about/about-content";
 import { Container } from "@/components/layout/container";
+import { ProfilePhoto } from "@/components/layout/profile-photo";
 import { cn } from "@/lib/cn";
 
 const sectionIds = resumeSections.map((s) => s.id);
@@ -23,8 +24,10 @@ export function ResumePageContent() {
     <>
       <section className="border-b border-[var(--border-subtle)] pb-10 pt-12 sm:pt-16">
         <Container>
-          <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-            <div>
+          <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div className="flex items-center gap-5">
+              <ProfilePhoto size="md" className="hidden sm:block" />
+              <div>
               <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-cyan)]">
                 Resume
               </p>
@@ -34,6 +37,7 @@ export function ResumePageContent() {
               <p className="mt-3 text-[var(--text-muted)]">
                 Interactive CV · mirrors PDF · {site.openTo}
               </p>
+              </div>
             </div>
             <a
               href={site.cvPath}

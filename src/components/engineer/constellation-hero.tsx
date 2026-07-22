@@ -76,7 +76,7 @@ export function ConstellationHero() {
                   {activeProject.title}
                 </h2>
                 <p className="mt-2 text-sm text-[var(--text-muted)]">
-                  {truncate(activeProject.problem, 120)}
+                  {truncate(activeProject.hook, 120)}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <button

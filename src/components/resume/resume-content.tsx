@@ -194,8 +194,8 @@ export function ResumePageContent() {
                         <ExternalLink className="size-3" aria-hidden />
                       </Link>
                     </div>
-                    <p className="mt-2 text-sm text-[var(--text-muted)]">
-                      {project.problem.slice(0, 180)}…
+                    <p className="mt-2 text-sm italic text-[var(--text-secondary)]">
+                      {project.hook}
                     </p>
                   </div>
                 ))}

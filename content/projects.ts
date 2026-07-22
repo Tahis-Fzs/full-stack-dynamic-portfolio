@@ -6,6 +6,8 @@ export const projects: Project[] = [
     slug: "paylite-x",
     title: "PayLite X",
     tagline: "Premium MFS wallet simulation — ledger, OTP+PIN, 12 fused services",
+    hook:
+      "Pretty transfer screens are cheap. A ledger you can defend is not.",
     tier: 1,
     category: "fullstack",
     featured: true,
@@ -58,6 +60,8 @@ export const projects: Project[] = [
     slug: "studentmove",
     title: "StudentMove",
     tagline: "Smart transport for Dhaka students — live buses, routes, passes & GPS",
+    hook:
+      "Campus buses in Dhaka ran on Facebook threads and curb-side hope.",
     tier: 1,
     category: "fullstack",
     featured: true,
@@ -107,6 +111,8 @@ export const projects: Project[] = [
     slug: "ckd-multimodal-detection",
     title: "CKD Multimodal Detection",
     tagline: "Early CKD risk from clinical EHR + wearable signals with explainable AI",
+    hook:
+      "A kidney-risk score with no explanation is a number wearing a lab coat.",
     tier: 2,
     category: "ml",
     featured: true,
@@ -142,6 +148,8 @@ export const projects: Project[] = [
     slug: "retinal-oct-deep-learning",
     title: "Retinal OCT Classification",
     tagline: "Four-class OCT disease screening with ensemble deep learning",
+    hook:
+      "Hand-reading every OCT frame does not survive real volume.",
     tier: 2,
     category: "ml",
     featured: true,
@@ -181,6 +189,8 @@ export const projects: Project[] = [
     slug: "cicids2017-intrusion-detection",
     title: "CICIDS2017 Intrusion Detection",
     tagline: "Leakage-safe network intrusion + insider-threat risk scoring",
+    hook:
+      "Accuracy before cleaning is a costume for a messy log file.",
     tier: 2,
     category: "ml",
     featured: true,
@@ -214,6 +224,8 @@ export const projects: Project[] = [
     slug: "studentmove-flutter",
     title: "StudentMove Flutter App",
     tagline: "Mobile client — Firebase auth, live schedules, role-based access",
+    hook:
+      "A web admin panel does not fit in your pocket on the walk to the bus stop.",
     tier: 2,
     category: "mobile",
     featured: true,
@@ -247,6 +259,8 @@ export const projects: Project[] = [
     slug: "agro-culture",
     title: "AgroCulture Marketplace",
     tagline: "Farmer-to-buyer agricultural marketplace with reviews & agro-blog",
+    hook:
+      "Produce deals were dying inside phone calls that never became a record.",
     tier: 2,
     category: "fullstack",
     featured: true,
@@ -281,6 +295,7 @@ export const projects: Project[] = [
     slug: "smart-cart-iot",
     title: "Smart Cart IoT",
     tagline: "RFID item scanning with real-time billing",
+    hook: "Until checkout, the trolley was a prop on wheels.",
     tier: 3,
     category: "iot",
     featured: false,
@@ -310,6 +325,7 @@ export const projects: Project[] = [
     slug: "opengl-maritime-day-night",
     title: "OpenGL Maritime Scene",
     tagline: "Day/night cycle — ocean, lighthouse, ships",
+    hook: "A frozen mesh is not a graphics demo. Light has to move.",
     tier: 3,
     category: "graphics",
     featured: false,
@@ -339,6 +355,8 @@ export const projects: Project[] = [
     slug: "codekotha",
     title: "CodeKotha",
     tagline: "Collaborative dev project",
+    hook:
+      "English keywords should not be the toll booth before you learn a loop.",
     tier: 3,
     category: "collab",
     featured: false,
@@ -357,6 +375,8 @@ export const projects: Project[] = [
     slug: "why-so-serious-mail",
     title: "Why So Serious Mail",
     tagline: "Collaborative mail project",
+    hook:
+      "Permissions stay slide-ware until a small system breaks when you get them wrong.",
     tier: 3,
     category: "collab",
     featured: false,

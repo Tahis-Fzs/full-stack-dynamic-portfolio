@@ -19,6 +19,7 @@ import { StudentmoveLiveDemo } from "@/components/case-studies/studentmove-live-
 import { StudentmoveModules } from "@/components/case-studies/studentmove-modules";
 import { StudentmoveRoles } from "@/components/case-studies/studentmove-roles";
 import { Container } from "@/components/layout/container";
+import { FieldNoteHook } from "@/components/works/field-note-lead";
 
 export function StudentmoveLaunchCaseStudy() {
   const project = getProjectBySlug("studentmove");
@@ -56,9 +57,13 @@ export function StudentmoveLaunchCaseStudy() {
                 {project.tagline}
               </p>
 
+              <div className="mt-8">
+                <FieldNoteHook hook={project.hook} size="hero" />
+              </div>
+
               <div className="mt-8 space-y-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-paylite)]">
-                  Problem
+                  Context
                 </p>
                 <p className="max-w-2xl text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
                   {project.problem}

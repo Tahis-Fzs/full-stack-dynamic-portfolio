@@ -95,6 +95,330 @@
     color: transparent;
   }
 
+  .text-gradient-signal {
+    background: linear-gradient(
+      120deg,
+      var(--text-primary) 0%,
+      var(--accent-cyan) 42%,
+      var(--accent-paylite) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .signal-void-backdrop {
+    background:
+      radial-gradient(
+        ellipse 80% 60% at 15% 0%,
+        color-mix(in srgb, var(--accent-paylite) 14%, transparent),
+        transparent 55%
+      ),
+      radial-gradient(
+        ellipse 70% 50% at 90% 20%,
+        color-mix(in srgb, var(--accent-cyan) 12%, transparent),
+        transparent 50%
+      ),
+      radial-gradient(
+        ellipse 60% 40% at 50% 100%,
+        color-mix(in srgb, var(--bg-panel) 80%, transparent),
+        transparent 60%
+      ),
+      var(--bg-void);
+  }
+
+  .signal-lattice {
+    background-image:
+      linear-gradient(
+        color-mix(in srgb, var(--accent-cyan) 6%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        color-mix(in srgb, var(--accent-cyan) 6%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 56px 56px;
+    mask-image: radial-gradient(ellipse 85% 70% at 50% 35%, black, transparent 75%);
+  }
+
+  .brand-wordmark {
+    font-family: var(--font-display);
+    font-size: var(--text-brand);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.03em;
+  }
+
+  @keyframes hero-rise {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-rise {
+    animation: hero-rise var(--duration-cinematic) var(--ease-out-expo) both;
+  }
+
+  .hero-rise-1 {
+    animation-delay: 80ms;
+  }
+
+  .hero-rise-2 {
+    animation-delay: 160ms;
+  }
+
+  .hero-rise-3 {
+    animation-delay: 240ms;
+  }
+
+  .hero-rise-4 {
+    animation-delay: 320ms;
+  }
+
+  .hero-rise-5 {
+    animation-delay: 400ms;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-rise,
+    .hero-rise-1,
+    .hero-rise-2,
+    .hero-rise-3,
+    .hero-rise-4,
+    .hero-rise-5 {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /* ── Signal Void · brand wipe (Upgrade 3) ── */
+  .brand-wipe__panel {
+    position: absolute;
+    inset: 0;
+    transform: translate3d(-100%, 0, 0);
+    will-change: transform;
+  }
+
+  .brand-wipe__panel--shown {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .brand-wipe__panel--cover {
+    animation: brand-wipe-in var(--duration-base) var(--ease-out-expo) forwards;
+  }
+
+  .brand-wipe__panel--reveal {
+    animation: brand-wipe-out var(--duration-base) var(--ease-out-expo) forwards;
+  }
+
+  @keyframes brand-wipe-in {
+    from {
+      transform: translate3d(-100%, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes brand-wipe-out {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(100%, 0, 0);
+    }
+  }
+
+  .brand-wipe__panel--shown .brand-wipe__logo {
+    animation: brand-mark-settle 900ms var(--ease-out-expo) both;
+  }
+
+  .brand-wipe__panel--cover .brand-wipe__logo {
+    animation: brand-mark-pulse 480ms var(--ease-out-expo) both;
+  }
+
+  @keyframes brand-mark-settle {
+    from {
+      opacity: 0;
+      transform: scale(0.82) rotate(-8deg);
+    }
+    60% {
+      transform: scale(1.06) rotate(2deg);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  @keyframes brand-mark-pulse {
+    from {
+      transform: scale(0.94);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .brand-wipe__panel--shown .brand-wipe__title,
+  .brand-wipe__panel--cover .brand-wipe__title {
+    animation: brand-title-rise 720ms var(--ease-out-expo) 120ms both;
+  }
+
+  @keyframes brand-title-rise {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .brand-wipe__bar-fill {
+    transform: scaleX(0);
+  }
+
+  .brand-wipe__panel--shown .brand-wipe__bar-fill,
+  .brand-wipe__panel--cover .brand-wipe__bar-fill {
+    animation: brand-bar-fill 880ms var(--ease-in-out) 180ms forwards;
+  }
+
+  @keyframes brand-bar-fill {
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brand-wipe__panel,
+    .brand-wipe__logo,
+    .brand-wipe__title,
+    .brand-wipe__bar-fill {
+      animation: none !important;
+      transform: none !important;
+      opacity: 1 !important;
+    }
+  }
+
+  /* ── Kinetic hero motion (Upgrade 4) ── */
+  .kinetic-char,
+  .kinetic-word {
+    display: inline-block;
+    opacity: 0;
+    transform: translate3d(0, 72px, 0) rotateX(-88deg);
+    transform-origin: 50% 100%;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+
+  .kinetic-run .kinetic-char {
+    animation: kinetic-char-in 980ms var(--ease-out-expo) forwards;
+    animation-delay: calc(
+      var(--char-delay, 0ms) + var(--char-index, 0) * var(--char-stagger, 42ms)
+    );
+  }
+
+  .kinetic-run .kinetic-word {
+    animation: kinetic-word-in 820ms var(--ease-out-expo) forwards;
+    animation-delay: calc(
+      var(--word-delay, 0ms) + var(--word-index, 0) * var(--word-stagger, 38ms)
+    );
+  }
+
+  .kinetic-run.text-gradient-signal .kinetic-char {
+    background: linear-gradient(
+      120deg,
+      var(--text-primary) 0%,
+      var(--accent-cyan) 42%,
+      var(--accent-paylite) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  @keyframes kinetic-char-in {
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) rotateX(0deg);
+    }
+  }
+
+  @keyframes kinetic-word-in {
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .kinetic-fade-in {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  .kinetic-run .kinetic-fade-in {
+    animation: kinetic-fade-in 760ms var(--ease-out-expo) forwards;
+    animation-delay: var(--fade-delay, 0ms);
+  }
+
+  @keyframes kinetic-fade-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .kinetic-stat {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  .kinetic-run .kinetic-stat {
+    animation: kinetic-stat-in 700ms var(--ease-out-expo) forwards;
+    animation-delay: calc(
+      var(--stat-delay, 0ms) + var(--stat-index, 0) * 90ms
+    );
+  }
+
+  @keyframes kinetic-stat-in {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .hero-portrait-tilt {
+    perspective: 1000px;
+  }
+
+  .hero-portrait-tilt > div {
+    transform: rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transition: transform var(--duration-base) var(--ease-out-expo);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .kinetic-char,
+    .kinetic-word,
+    .kinetic-fade-in,
+    .kinetic-stat {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .hero-portrait-tilt > div {
+      transform: none !important;
+    }
+  }
+
   .grain {
     position: relative;
   }

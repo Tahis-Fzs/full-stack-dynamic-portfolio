@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter, JetBrains_Mono } from "next/font/google";
 import { ModeProvider } from "@/components/providers/mode-provider";
+import { PageTransitionProvider } from "@/components/providers/page-transition-provider";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { PersonJsonLd } from "@/components/seo/json-ld";
@@ -85,9 +86,11 @@ export default function RootLayout({
       </head>
       <body className="grain flex min-h-dvh flex-col antialiased">
         <ModeProvider>
-          <SiteHeader />
-          <main className="relative z-[2] flex-1">{children}</main>
-          <SiteFooter />
+          <PageTransitionProvider>
+            <SiteHeader />
+            <main className="relative z-[2] flex-1">{children}</main>
+            <SiteFooter />
+          </PageTransitionProvider>
         </ModeProvider>
       </body>
     </html>

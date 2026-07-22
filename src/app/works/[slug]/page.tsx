@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { getProjectBySlug, projects } from "@/content/projects";
 import { Container } from "@/components/layout/container";
+import { FieldNoteHook } from "@/components/works/field-note-lead";
 
 interface CaseStudyPageProps {
   params: Promise<{ slug: string }>;
@@ -20,7 +21,7 @@ export async function generateMetadata({ params }: CaseStudyPageProps) {
   if (!project) return { title: "Project not found" };
   return {
     title: `${project.title} — Studio Tahsin`,
-    description: project.problem,
+    description: project.hook,
   };
 }
 
@@ -46,12 +47,16 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         </Link>
 
         <header className="mt-8 max-w-3xl">
-          <h1 className="font-display text-[var(--text-section)] text-[var(--text-primary)]">
+          <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent-paylite)]">
+            Field note
+          </p>
+          <h1 className="mt-4 font-display text-[var(--text-section)] text-[var(--text-primary)]">
             {project.title}
           </h1>
-          <p className="mt-4 text-lg text-[var(--text-secondary)]">
-            {project.tagline}
-          </p>
+          <p className="mt-3 text-sm text-[var(--text-dim)]">{project.tagline}</p>
+          <div className="mt-8">
+            <FieldNoteHook hook={project.hook} size="hero" />
+          </div>
           <div className="mt-6 flex flex-wrap gap-3">
             {project.liveUrl && (
               <Link

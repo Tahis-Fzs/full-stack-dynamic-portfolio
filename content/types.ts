@@ -18,6 +18,8 @@ export interface Project {
   slug: string;
   title: string;
   tagline: string;
+  /** One-line editorial opener — the pressure before the case study */
+  hook: string;
   tier: ProjectTier;
   category: ProjectCategory;
   featured: boolean;
@@ -56,6 +58,11 @@ export interface TimelineEntry {
   detail: string;
 }
 
+export interface HeroStat {
+  value: string;
+  label: string;
+}
+
 export interface SiteConfig {
   name: string;
   shortName: string;
@@ -63,6 +70,16 @@ export interface SiteConfig {
   tagline: string;
   positioning: string;
   thinkingHook: string;
+  designSystem: {
+    name: string;
+    tagline: string;
+  };
+  hero: {
+    role: string;
+    headline: string;
+    support: string;
+    stats: HeroStat[];
+  };
   location: string;
   openTo: string;
   email: string;

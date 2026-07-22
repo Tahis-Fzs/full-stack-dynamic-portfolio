@@ -1,46 +1,63 @@
 /**
- * Studio Tahsin — Design Tokens
+ * Signal Void — Studio Tahsin design system
+ * Deep midnight void · PayLite signal · cyan patina · glass depth
  * Import in globals.css: @import '../styles/tokens.css';
  */
 
 :root {
-  /* Color — PayLite family */
+  /* ── Signal Void palette ── */
   --bg-void: #020617;
-  --bg-elevated: #0f172a;
-  --bg-panel: #1e293b;
+  --bg-elevated: #0a1224;
+  --bg-panel: #111827;
+  --bg-deep: #010409;
   --surface-glass: rgba(255, 255, 255, 0.06);
   --surface-glass-hover: rgba(255, 255, 255, 0.09);
   --border-subtle: rgba(148, 163, 184, 0.12);
   --border-accent: rgba(34, 211, 238, 0.25);
+  --border-signal: rgba(226, 19, 110, 0.28);
 
-  --accent-cyan: #22d3ee;
-  --accent-cyan-dim: #0891b2;
-  --accent-paylite: #e2136e;
+  /* Semantic aliases (Signal Void) */
+  --ink: #f8fafc;
+  --ink-soft: #cbd5e1;
+  --mist: #94a3b8;
+  --signal: #e2136e;
+  --signal-soft: #f472b6;
+  --signal-wash: rgba(226, 19, 110, 0.14);
+  --patina: #22d3ee;
+  --patina-dim: #0891b2;
+  --patina-wash: rgba(34, 211, 238, 0.12);
+
+  --accent-cyan: var(--patina);
+  --accent-cyan-dim: var(--patina-dim);
+  --accent-paylite: var(--signal);
   --accent-paylite-dim: #be185d;
 
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
+  --text-primary: var(--ink);
+  --text-secondary: var(--ink-soft);
+  --text-muted: var(--mist);
   --text-dim: #64748b;
+  --on-signal: #ffffff;
 
   /* Typography */
   --font-display: "Instrument Serif", "Newsreader", Georgia, serif;
   --font-ui: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
-  --text-hero: clamp(2.5rem, 6vw, 4.5rem);
+  --text-hero: clamp(2.75rem, 7vw, 5rem);
+  --text-brand: clamp(3rem, 9vw, 5.5rem);
   --text-section: clamp(1.75rem, 3vw, 2.5rem);
   --text-body: 1rem;
   --text-small: 0.875rem;
   --text-xs: 0.75rem;
 
-  --leading-tight: 1.1;
+  --leading-tight: 1.05;
   --leading-snug: 1.35;
   --leading-normal: 1.6;
 
   /* Layout */
   --max-width: 72rem;
   --section-y: clamp(4rem, 10vw, 7rem);
+  --hero-min: min(92dvh, 920px);
   --radius-card: 1rem;
   --radius-pill: 9999px;
   --glass-blur: 24px;

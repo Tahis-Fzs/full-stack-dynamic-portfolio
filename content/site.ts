@@ -10,6 +10,23 @@ export const site: SiteConfig = {
     "Computer Science & Engineering graduate building full-stack systems, mobile apps, and applied machine learning with documented trade-offs.",
   thinkingHook:
     "Your portfolio sells thinking, not screenshots. Every project here follows Problem → Approach → Impact.",
+  designSystem: {
+    name: "Signal Void",
+    tagline: "Deep midnight void · PayLite signal · cyan patina · Instrument Serif",
+  },
+  hero: {
+    role: "Software Developer · CSE graduate · Dhaka",
+    headline:
+      "Transit apps. Banking ledgers. Clinical models. Live demos.",
+    support:
+      "I build PayLite X, StudentMove, and multimodal ML systems — with field notes that document trade-offs, not just screenshots.",
+    stats: [
+      { value: "11", label: "Projects documented" },
+      { value: "2", label: "Live demos shipped" },
+      { value: "DIU", label: "CSE · thesis defended" },
+      { value: "5+", label: "Team builds" },
+    ],
+  },
   location: "Dhaka, Bangladesh",
   openTo: "Full-time · Entry to mid-level software engineering",
   email: "md.shadmantahsinfzs@gmail.com",

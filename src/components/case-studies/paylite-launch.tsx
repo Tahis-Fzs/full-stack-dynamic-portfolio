@@ -14,6 +14,7 @@ import { PayliteFusionTable } from "@/components/case-studies/paylite-fusion-tab
 import { PayliteLiveDemo } from "@/components/case-studies/paylite-live-demo";
 import { PayliteOtpFlow } from "@/components/case-studies/paylite-otp-flow";
 import { Container } from "@/components/layout/container";
+import { FieldNoteHook } from "@/components/works/field-note-lead";
 
 export function PayliteLaunchCaseStudy() {
   const project = getProjectBySlug("paylite-x");
@@ -51,9 +52,13 @@ export function PayliteLaunchCaseStudy() {
                 {project.tagline}
               </p>
 
+              <div className="mt-8">
+                <FieldNoteHook hook={project.hook} size="hero" />
+              </div>
+
               <div className="mt-8 space-y-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent-paylite)]">
-                  Problem
+                  Context
                 </p>
                 <p className="max-w-2xl text-base leading-relaxed text-[var(--text-secondary)] sm:text-lg">
                   {project.problem}

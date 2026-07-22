@@ -6,21 +6,22 @@ const sizeClasses = {
   sm: "size-16",
   md: "size-24 sm:size-28",
   lg: "size-36 sm:size-44",
-  xl: "size-44 sm:size-52",
+  xl: "size-48 sm:size-56 lg:size-64",
 } as const;
 
 const imageSizes = {
   sm: "64px",
   md: "112px",
   lg: "176px",
-  xl: "208px",
+  xl: "256px",
 } as const;
 
 type ProfilePhotoProps = {
   size?: keyof typeof sizeClasses;
-  rounded?: "2xl" | "full";
+  rounded?: "2xl" | "full" | "premium";
   className?: string;
   priority?: boolean;
+  premiumFrame?: boolean;
 };
 
 export function ProfilePhoto({
@@ -28,13 +29,20 @@ export function ProfilePhoto({
   rounded = "2xl",
   className,
   priority = false,
+  premiumFrame = false,
 }: ProfilePhotoProps) {
-  return (
+  const inner = (
     <div
       className={cn(
-        "relative shrink-0 overflow-hidden border border-[var(--border-subtle)] bg-[var(--surface-glass)] shadow-[0_0_48px_-16px_color-mix(in_srgb,var(--accent-cyan)_40%,transparent)]",
-        rounded === "full" ? "rounded-full" : "rounded-2xl",
+        "relative shrink-0 overflow-hidden bg-[var(--bg-elevated)]",
+        rounded === "full"
+          ? "rounded-full"
+          : rounded === "premium"
+            ? "rounded-[calc(var(--radius-premium)-3px)]"
+            : "rounded-2xl",
         sizeClasses[size],
+        !premiumFrame &&
+          "border border-[var(--border-subtle)] shadow-[0_0_48px_-16px_color-mix(in_srgb,var(--accent-cyan)_40%,transparent)]",
         className,
       )}
     >
@@ -44,8 +52,14 @@ export function ProfilePhoto({
         fill
         priority={priority}
         sizes={imageSizes[size]}
-        className="object-cover object-[center_20%]"
+        className="object-cover object-[center_18%]"
       />
     </div>
   );
+
+  if (premiumFrame) {
+    return <div className="premium-portrait-frame">{inner}</div>;
+  }
+
+  return inner;
 }

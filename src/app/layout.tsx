@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: site.seo.title,
-    template: "%s · Studio Tahsin",
+    template: `%s · ${site.brandName}`,
   },
   description: site.seo.description,
   keywords: [

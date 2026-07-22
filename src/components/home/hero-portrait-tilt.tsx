@@ -12,30 +12,25 @@ type HeroPortraitTiltProps = {
 export function HeroPortraitTilt({ className }: HeroPortraitTiltProps) {
   const reduceMotion = useReducedMotion();
 
+  const photo = (
+    <ProfilePhoto size="xl" rounded="premium" premiumFrame priority />
+  );
+
   if (reduceMotion) {
-    return (
-      <ProfilePhoto
-        size="xl"
-        priority
-        className={cn(
-          "ring-2 ring-[var(--border-signal)] shadow-[0_0_64px_-16px_var(--accent-paylite)]",
-          className,
-        )}
-      />
-    );
+    return <div className={className}>{photo}</div>;
   }
 
   return (
     <div
-      className={cn("hero-portrait-tilt", !reduceMotion && "kinetic-fade-in", className)}
-      style={!reduceMotion ? ({ "--fade-delay": "280ms" } as CSSProperties) : undefined}
+      className={cn("hero-portrait-tilt kinetic-fade-in", className)}
+      style={{ "--fade-delay": "280ms" } as CSSProperties}
       onMouseMove={(event) => {
         const node = event.currentTarget;
         const rect = node.getBoundingClientRect();
         const x = (event.clientX - rect.left) / rect.width - 0.5;
         const y = (event.clientY - rect.top) / rect.height - 0.5;
-        node.style.setProperty("--tilt-x", `${y * -7}deg`);
-        node.style.setProperty("--tilt-y", `${x * 8}deg`);
+        node.style.setProperty("--tilt-x", `${y * -5}deg`);
+        node.style.setProperty("--tilt-y", `${x * 6}deg`);
       }}
       onMouseLeave={(event) => {
         const node = event.currentTarget;
@@ -43,11 +38,9 @@ export function HeroPortraitTilt({ className }: HeroPortraitTiltProps) {
         node.style.setProperty("--tilt-y", "0deg");
       }}
     >
-      <ProfilePhoto
-        size="xl"
-        priority
-        className="ring-2 ring-[var(--border-signal)] shadow-[0_0_64px_-16px_var(--accent-paylite)] transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]"
-      />
+      <div className="transition-transform duration-[var(--duration-base)] ease-[var(--ease-out-expo)]">
+        {photo}
+      </div>
     </div>
   );
 }

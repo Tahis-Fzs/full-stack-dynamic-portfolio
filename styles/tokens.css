@@ -44,7 +44,7 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
   --text-hero: clamp(2.75rem, 7vw, 5rem);
-  --text-brand: clamp(3rem, 9vw, 5.5rem);
+  --text-brand: clamp(3.25rem, 10vw, 6rem);
   --text-section: clamp(1.75rem, 3vw, 2.5rem);
   --text-body: 1rem;
   --text-small: 0.875rem;
@@ -58,9 +58,20 @@
   --max-width: 72rem;
   --section-y: clamp(4rem, 10vw, 7rem);
   --hero-min: min(92dvh, 920px);
-  --radius-card: 1rem;
+  --radius-card: 1.25rem;
+  --radius-premium: 1.75rem;
   --radius-pill: 9999px;
-  --glass-blur: 24px;
+  --glass-blur: 28px;
+
+  --shadow-premium:
+    0 0 0 1px color-mix(in srgb, var(--accent-cyan) 8%, transparent),
+    0 24px 48px -24px rgba(0, 0, 0, 0.65),
+    0 0 80px -40px color-mix(in srgb, var(--accent-paylite) 25%, transparent);
+
+  --shadow-portrait:
+    0 0 0 1px color-mix(in srgb, var(--accent-cyan) 22%, transparent),
+    0 32px 64px -28px rgba(0, 0, 0, 0.75),
+    0 0 120px -48px color-mix(in srgb, var(--accent-paylite) 35%, transparent);
 
   /* Motion */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);

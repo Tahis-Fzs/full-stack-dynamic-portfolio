@@ -4,11 +4,8 @@ import {
   useExploreMode } from "@/components/providers/mode-provider";
 import { ConstellationHeroLazy } from "@/components/engineer/constellation-lazy";
 import { EngineerScroll } from "@/components/engineer/engineer-scroll";
+import { DesignCraftSection } from "@/components/home/design-craft-section";
 import { DesignPortfolioSection } from "@/components/home/design-portfolio-section";
-import {
-  DesignProcessSection,
-  DesignSkillsSection,
-} from "@/components/home/design-skills-section";
 import { ExperienceHighlights } from "@/components/home/experience-highlights";
 import { HomeAllProjects } from "@/components/home/home-all-projects";
 import {
@@ -16,7 +13,6 @@ import {
   HomeBottomCta,
   HomeHero,
 } from "@/components/home/home-sections";
-import { LegacyStatsStrip } from "@/components/home/legacy-stats-strip";
 import { SkillsBento } from "@/components/home/skills-bento";
 import { ThinkingSection } from "@/components/home/thinking-section";
 
@@ -27,13 +23,11 @@ export function HomeShell() {
   const content = (
     <>
       {isEngineer ? <ConstellationHeroLazy /> : <HomeHero />}
-      <LegacyStatsStrip />
       <ThinkingSection />
       <HomeAllProjects />
       <DesignPortfolioSection />
       <ExperienceHighlights />
-      <DesignSkillsSection />
-      <DesignProcessSection />
+      <DesignCraftSection />
       <SkillsBento />
       <EducationStrip />
       <HomeBottomCta />

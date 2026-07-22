@@ -34,25 +34,23 @@ export function HomeHeroKinetic() {
   }, [reduceMotion]);
 
   return (
-    <section className="relative min-h-[min(82dvh,780px)] overflow-hidden border-b border-[var(--border-subtle)]">
+    <section className="relative min-h-[min(88dvh,860px)] overflow-hidden">
       <HeroBackdrop />
+      <div className="section-divider absolute inset-x-0 bottom-0 z-[2]" aria-hidden />
 
-      <Container className="relative z-[1] pb-14 pt-10 sm:pb-16 sm:pt-14">
-        <div
-          className={motionReady ? "kinetic-run" : undefined}
-          style={{ perspective: "1200px" }}
-        >
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between lg:gap-12">
-            <div className="order-2 min-w-0 flex-1 lg:order-1 lg:max-w-[640px]">
+      <Container className="relative z-[1] pb-16 pt-12 sm:pb-20 sm:pt-16">
+        <div className={motionReady ? "kinetic-run" : undefined}>
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
+            <div className="order-2 min-w-0 flex-1 lg:order-1 lg:max-w-[34rem]">
               <p
-                className="kinetic-fade-in text-xs uppercase tracking-[0.2em] text-[var(--accent-cyan)]"
+                className="kinetic-fade-in premium-eyebrow"
                 style={{ "--fade-delay": "120ms" } as CSSProperties}
               >
-                {site.hero.role}
+                {site.brandName}
               </p>
 
               <h1
-                className="hero-name-line brand-wordmark mt-4 text-gradient-signal"
+                className="hero-name-line brand-wordmark mt-5 text-gradient-signal"
                 aria-label={site.name}
               >
                 {reduceMotion ? (
@@ -64,82 +62,70 @@ export function HomeHeroKinetic() {
                     splitBy="char"
                     run={motionReady}
                     baseDelayMs={200}
-                    staggerMs={28}
+                    staggerMs={26}
                     className="inline"
                   />
                 )}
               </h1>
 
               <p
-                className="kinetic-fade-in mt-2 text-sm font-medium text-[var(--text-secondary)] sm:text-base"
+                className="kinetic-fade-in mt-3 text-base text-[var(--text-secondary)] sm:text-lg"
                 style={{ "--fade-delay": "360ms" } as CSSProperties}
               >
-                {site.brandName}
-                <span className="mx-2 text-[var(--text-dim)]">·</span>
                 {site.profileRole}
               </p>
 
               <p
-                className="kinetic-fade-in mt-6 max-w-[58ch] text-base leading-[1.65] text-[var(--text-primary)] sm:text-lg"
+                className="kinetic-fade-in premium-lead mt-6 max-w-[52ch]"
                 style={{ "--fade-delay": "480ms" } as CSSProperties}
               >
                 {site.hero.headline}
               </p>
 
               <p
-                className="kinetic-fade-in mt-4 max-w-[58ch] text-sm leading-[1.7] text-[var(--text-muted)] sm:text-[15px]"
-                style={{ "--fade-delay": "560ms" } as CSSProperties}
+                className="kinetic-fade-in mt-3 max-w-[52ch] text-sm leading-[1.7] text-[var(--text-dim)]"
+                style={{ "--fade-delay": "540ms" } as CSSProperties}
               >
                 {site.hero.support}
               </p>
 
               <div
-                className="kinetic-fade-in mt-5 flex flex-wrap items-center gap-2.5 text-xs text-[var(--text-dim)]"
-                style={{ "--fade-delay": "640ms" } as CSSProperties}
+                className="kinetic-fade-in mt-6 flex flex-wrap items-center gap-2"
+                style={{ "--fade-delay": "600ms" } as CSSProperties}
               >
-                <span className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-3 py-1">
+                <span className="premium-btn-ghost !px-3 !py-1.5 !text-xs text-[var(--text-dim)]">
                   <MapPin className="size-3 text-[var(--accent-cyan)]" aria-hidden />
                   {site.location}
-                </span>
-                <span className="rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-3 py-1">
-                  {site.openTo}
                 </span>
               </div>
 
               <div
-                className="kinetic-fade-in mt-7 flex flex-wrap gap-3"
-                style={{ "--fade-delay": "720ms" } as CSSProperties}
+                className="kinetic-fade-in mt-8 flex flex-wrap gap-3"
+                style={{ "--fade-delay": "680ms" } as CSSProperties}
               >
-                <Link
-                  href="/works"
-                  className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-paylite)] px-6 py-3 text-sm font-medium text-[var(--on-signal)] shadow-[0_0_48px_-10px_var(--accent-paylite)] transition-opacity hover:opacity-90"
-                >
+                <Link href="/works" className="premium-btn-primary">
                   View projects
                   <ArrowRight className="size-4" aria-hidden />
                 </Link>
-                <a
-                  href={site.cvPath}
-                  download
-                  className="glass glass-hover inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-[var(--text-primary)]"
-                >
+                <a href={site.cvPath} download className="premium-btn-ghost">
                   <Download className="size-4" aria-hidden />
                   Download CV
                 </a>
-                <Link
-                  href="/contact"
-                  className="glass glass-hover inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm text-[var(--text-secondary)]"
-                >
+                <Link href="/contact" className="premium-btn-ghost">
                   Contact
                 </Link>
               </div>
             </div>
 
-            <div className="order-1 mx-auto shrink-0 lg:order-2 lg:mx-0 lg:pt-2">
+            <div className="order-1 mx-auto shrink-0 lg:order-2 lg:mx-0">
               <HeroPortraitTilt />
             </div>
           </div>
 
-          <div className="kinetic-fade-in mt-8" style={{ "--fade-delay": "820ms" } as CSSProperties}>
+          <div
+            className="kinetic-fade-in mt-12 sm:mt-14"
+            style={{ "--fade-delay": "760ms" } as CSSProperties}
+          >
             <HeroStats run={motionReady} />
           </div>
         </div>

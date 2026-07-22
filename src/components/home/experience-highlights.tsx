@@ -1,35 +1,33 @@
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/container";
+import {
+  SectionHeader,
+  SectionShell,
+} from "@/components/layout/section-header";
 
 export function ExperienceHighlights() {
   return (
-    <section className="py-14 sm:py-16">
+    <SectionShell variant="void">
       <Container>
-        <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent-cyan)]">
-            Experience
-          </p>
-          <h2 className="mt-3 font-display text-2xl text-[var(--text-primary)] sm:text-3xl">
-            Design practice & real-world work
-          </h2>
-        </div>
+        <SectionHeader
+          eyebrow="Experience"
+          title="Design practice & real-world work"
+          description="From client-facing UI/UX to enterprise consulting — the same rigor I bring to engineering case studies."
+        />
 
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {site.experiences.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-5 sm:p-6"
-            >
-              <h3 className="font-display text-lg text-[var(--text-primary)]">
+            <div key={item.title} className="premium-card p-6 sm:p-7">
+              <h3 className="font-display text-xl text-[var(--text-primary)]">
                 {item.title}
               </h3>
-              <p className="mt-2 text-sm leading-[1.65] text-[var(--text-muted)]">
+              <p className="mt-3 text-sm leading-[1.7] text-[var(--text-muted)]">
                 {item.description}
               </p>
             </div>
           ))}
         </div>
       </Container>
-    </section>
+    </SectionShell>
   );
 }

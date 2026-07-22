@@ -28,20 +28,20 @@ export const site: SiteConfig = {
   hero: {
     role: "UI/UX · Full-Stack · Mobile · Applied ML",
     headline:
-      "I design interfaces in Figma and ship them in code — fintech wallets, Dhaka transport, clinical ML, and 10+ UI case studies.",
+      "Design and ship products that hold up in interviews — fintech, transport, ML, and mobile.",
     support:
-      "PayLite X (live ledger demo), StudentMove (Laravel + Firebase GPS), CKD & retinal OCT research, CICIDS intrusion pipelines, Flutter mobile client, AgroCulture marketplace — plus ERP, healthcare, and SaaS UI work on Behance.",
+      "PayLite X and StudentMove are live. Eleven engineering repos and ten UI case studies on Behance.",
     stats: [
-      { value: "11", label: "GitHub engineering projects" },
-      { value: "10", label: "UI/UX design projects" },
-      { value: "2", label: "Live web demos" },
-      { value: "2026", label: "DIU graduation" },
+      { value: "12+", label: "Projects delivered" },
+      { value: "2", label: "Live product demos" },
+      { value: "3.35", label: "DIU CGPA" },
+      { value: "1.5", label: "Years experience" },
     ],
     legacyStats: [
-      { value: "1.5", label: "Years experience" },
-      { value: "5", label: "Clients worldwide" },
-      { value: "12+", label: "Total projects" },
-      { value: "3.35", label: "DIU CGPA" },
+      { value: "11", label: "GitHub repos" },
+      { value: "10", label: "UI/UX case studies" },
+      { value: "5", label: "Client collaborations" },
+      { value: "2026", label: "Graduation year" },
     ],
   },
   location: "Dhaka, Bangladesh",

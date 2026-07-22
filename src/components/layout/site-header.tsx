@@ -24,13 +24,13 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-[var(--z-nav)] border-b border-[var(--border-subtle)] bg-[color-mix(in_srgb,var(--bg-void)_82%,transparent)] backdrop-blur-xl">
-      <Container as="div" className="flex h-16 items-center justify-between gap-4">
+    <header className="premium-header relative sticky top-0 z-[var(--z-nav)] backdrop-blur-2xl">
+      <Container as="div" className="relative flex h-[4.25rem] items-center justify-between gap-4">
         <Link href="/" className="group flex min-w-0 items-center gap-3">
           <BrandMark size="sm" showLabel />
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex" aria-label="Main">
+        <nav className="hidden items-center gap-0.5 md:flex" aria-label="Main">
           {navLinks.map((link) => {
             const active =
               link.href === "/"
@@ -43,7 +43,7 @@ export function SiteHeader() {
                 className={cn(
                   "rounded-full px-3.5 py-2 text-sm transition-colors",
                   active
-                    ? "bg-[var(--surface-glass)] text-[var(--accent-cyan)]"
+                    ? "bg-[color-mix(in_srgb,var(--accent-cyan)_12%,transparent)] text-[var(--accent-cyan)]"
                     : "text-[var(--text-muted)] hover:text-[var(--text-primary)]",
                 )}
               >
@@ -56,7 +56,7 @@ export function SiteHeader() {
         <div className="hidden items-center gap-2 md:flex">
           {hasChosen && (
             <div
-              className="glass flex rounded-full p-1"
+              className="flex rounded-full border border-[var(--border-subtle)] bg-[color-mix(in_srgb,var(--surface-glass)_90%,transparent)] p-1"
               role="group"
               aria-label="Explore mode"
             >
@@ -66,7 +66,7 @@ export function SiteHeader() {
                 className={cn(
                   "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all",
                   resolvedMode === "recruiter"
-                    ? "bg-[var(--accent-paylite)] text-white"
+                    ? "bg-[var(--accent-paylite)] text-white shadow-[0_8px_24px_-8px_color-mix(in_srgb,var(--accent-paylite)_65%,transparent)]"
                     : "text-[var(--text-muted)] hover:text-[var(--text-primary)]",
                 )}
               >
@@ -79,7 +79,7 @@ export function SiteHeader() {
                 className={cn(
                   "flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium transition-all",
                   resolvedMode === "engineer"
-                    ? "bg-[var(--accent-cyan)] text-[var(--bg-void)]"
+                    ? "bg-[var(--accent-cyan)] text-[var(--bg-void)] shadow-[0_8px_24px_-8px_color-mix(in_srgb,var(--accent-cyan)_55%,transparent)]"
                     : "text-[var(--text-muted)] hover:text-[var(--text-primary)]",
                 )}
               >
@@ -89,11 +89,7 @@ export function SiteHeader() {
             </div>
           )}
 
-          <a
-            href={site.cvPath}
-            download
-            className="glass glass-hover flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium text-[var(--text-primary)]"
-          >
+          <a href={site.cvPath} download className="premium-btn-ghost !px-4 !py-2 !text-xs">
             <Download className="size-3.5" aria-hidden />
             CV
           </a>
@@ -101,7 +97,7 @@ export function SiteHeader() {
 
         <button
           type="button"
-          className="glass rounded-full p-2.5 md:hidden"
+          className="premium-btn-ghost !p-2.5 md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           onClick={() => setOpen((v) => !v)}
         >
@@ -127,14 +123,14 @@ export function SiteHeader() {
                 <button
                   type="button"
                   onClick={() => setMode("recruiter")}
-                  className="glass flex-1 rounded-xl py-2 text-xs"
+                  className="premium-btn-ghost flex-1 !justify-center !py-2 !text-xs"
                 >
                   Recruiter
                 </button>
                 <button
                   type="button"
                   onClick={() => setMode("engineer")}
-                  className="glass flex-1 rounded-xl py-2 text-xs"
+                  className="premium-btn-ghost flex-1 !justify-center !py-2 !text-xs"
                 >
                   Engineer
                 </button>
@@ -143,7 +139,7 @@ export function SiteHeader() {
             <a
               href={site.cvPath}
               download
-              className="glass mt-2 rounded-xl py-3 text-center text-sm"
+              className="premium-btn-primary mt-2 !justify-center !py-3 !text-sm"
             >
               Download CV
             </a>

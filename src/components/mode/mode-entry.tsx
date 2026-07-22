@@ -84,7 +84,7 @@ export function ModeEntry() {
                 type="button"
                 onClick={() => setMode(mode.id)}
                 className={cn(
-                  "glass glass-hover group relative overflow-hidden rounded-[var(--radius-card)] p-6 text-left sm:p-8",
+                  "premium-card group relative overflow-hidden p-6 text-left sm:p-8",
                   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--accent-cyan)]",
                 )}
               >

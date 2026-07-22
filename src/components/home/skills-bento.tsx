@@ -1,34 +1,36 @@
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/container";
+import {
+  SectionHeader,
+  SectionShell,
+} from "@/components/layout/section-header";
 
 export function SkillsBento() {
   return (
-    <section className="py-14 sm:py-16">
+    <SectionShell>
       <Container>
-        <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent-cyan)]">
-            Stack
-          </p>
-          <h2 className="mt-3 font-display text-2xl text-[var(--text-primary)] sm:text-3xl">
-            What I use day to day
-          </h2>
-        </div>
+        <SectionHeader
+          eyebrow="Stack"
+          title="What I use day to day"
+          description="Languages, frameworks, and tools behind PayLite X, StudentMove, and the rest of the portfolio."
+        />
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:grid-cols-2">
           {site.skillGroups.map((group) => (
-            <div
-              key={group.title}
-              className="rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-5 sm:p-6"
-            >
-              <p className="font-display text-base text-[var(--text-primary)]">
+            <div key={group.title} className="premium-card p-6 sm:p-7">
+              <p className="font-display text-lg text-[var(--text-primary)]">
                 {group.title}
               </p>
-              <ul className="mt-3 space-y-2">
+              <ul className="mt-4 space-y-2">
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="text-sm leading-[1.65] text-[var(--text-muted)]"
+                    className="flex items-start gap-2 text-sm leading-[1.65] text-[var(--text-muted)]"
                   >
+                    <span
+                      className="mt-2 size-1 shrink-0 rounded-full bg-[var(--accent-cyan)]"
+                      aria-hidden
+                    />
                     {item}
                   </li>
                 ))}
@@ -37,6 +39,6 @@ export function SkillsBento() {
           ))}
         </div>
       </Container>
-    </section>
+    </SectionShell>
   );
 }

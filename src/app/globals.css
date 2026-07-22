@@ -86,6 +86,174 @@
   .glass-hover:hover {
     background: var(--surface-glass-hover);
     border-color: var(--border-accent);
+    transform: translateY(-1px);
+  }
+
+  .premium-card {
+    background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--bg-elevated) 92%, white 8%) 0%,
+      color-mix(in srgb, var(--bg-void) 96%, transparent) 100%
+    );
+    border: 1px solid color-mix(in srgb, var(--accent-cyan) 12%, var(--border-subtle));
+    border-radius: var(--radius-premium);
+    box-shadow: var(--shadow-premium);
+    transition:
+      border-color var(--duration-fast) var(--ease-out-expo),
+      transform var(--duration-fast) var(--ease-out-expo),
+      box-shadow var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .premium-card:hover {
+    border-color: color-mix(in srgb, var(--accent-cyan) 28%, transparent);
+    transform: translateY(-2px);
+  }
+
+  .premium-eyebrow {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-cyan);
+  }
+
+  .premium-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.875rem, 3.2vw, 2.75rem);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+
+  .premium-lead {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+
+  .premium-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-pill);
+    padding: 0.875rem 1.625rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--on-signal);
+    background: linear-gradient(
+      135deg,
+      var(--accent-paylite) 0%,
+      color-mix(in srgb, var(--accent-paylite) 70%, var(--accent-cyan)) 100%
+    );
+    box-shadow:
+      0 0 0 1px color-mix(in srgb, white 12%, transparent),
+      0 12px 40px -12px color-mix(in srgb, var(--accent-paylite) 55%, transparent);
+    transition:
+      transform var(--duration-fast) var(--ease-out-expo),
+      box-shadow var(--duration-fast) var(--ease-out-expo),
+      opacity var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .premium-btn-primary:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+  }
+
+  .premium-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-pill);
+    padding: 0.875rem 1.625rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--surface-glass) 80%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent-cyan) 18%, var(--border-subtle));
+    backdrop-filter: blur(var(--glass-blur));
+    transition:
+      border-color var(--duration-fast) var(--ease-out-expo),
+      transform var(--duration-fast) var(--ease-out-expo),
+      background var(--duration-fast) var(--ease-out-expo);
+  }
+
+  .premium-btn-ghost:hover {
+    border-color: color-mix(in srgb, var(--accent-cyan) 35%, transparent);
+    transform: translateY(-1px);
+    background: var(--surface-glass-hover);
+  }
+
+  .premium-portrait-frame {
+    position: relative;
+    padding: 3px;
+    border-radius: var(--radius-premium);
+    background: linear-gradient(
+      145deg,
+      color-mix(in srgb, var(--accent-cyan) 55%, transparent),
+      color-mix(in srgb, var(--accent-paylite) 45%, transparent) 50%,
+      color-mix(in srgb, var(--accent-cyan) 25%, transparent)
+    );
+    box-shadow: var(--shadow-portrait);
+  }
+
+  .premium-portrait-frame::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 3px;
+    border-radius: calc(var(--radius-premium) - 3px);
+    box-shadow: inset 0 1px 0 color-mix(in srgb, white 14%, transparent);
+  }
+
+  .section-premium {
+    padding-block: clamp(4.5rem, 9vw, 7.5rem);
+  }
+
+  .section-premium--elevated {
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--bg-elevated) 40%, transparent) 0%,
+      var(--bg-void) 100%
+    );
+    border-block: 1px solid var(--border-subtle);
+  }
+
+  .section-premium--void {
+    background: var(--bg-void);
+  }
+
+  .premium-header {
+    border-bottom: 1px solid color-mix(in srgb, var(--accent-cyan) 10%, var(--border-subtle));
+    background: color-mix(in srgb, var(--bg-void) 78%, transparent);
+    box-shadow:
+      0 1px 0 color-mix(in srgb, white 4%, transparent),
+      0 12px 40px -24px rgba(0, 0, 0, 0.55);
+  }
+
+  .premium-header::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--accent-paylite) 35%, transparent) 50%,
+      transparent
+    );
+    opacity: 0.6;
+  }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in srgb, var(--accent-cyan) 35%, var(--border-subtle)) 50%,
+      transparent
+    );
   }
 
   .text-gradient-cyan {
@@ -110,18 +278,23 @@
   .signal-void-backdrop {
     background:
       radial-gradient(
-        ellipse 80% 60% at 15% 0%,
-        color-mix(in srgb, var(--accent-paylite) 14%, transparent),
+        ellipse 90% 70% at 8% -5%,
+        color-mix(in srgb, var(--accent-paylite) 18%, transparent),
+        transparent 52%
+      ),
+      radial-gradient(
+        ellipse 75% 55% at 95% 15%,
+        color-mix(in srgb, var(--accent-cyan) 16%, transparent),
+        transparent 48%
+      ),
+      radial-gradient(
+        ellipse 50% 35% at 72% 78%,
+        color-mix(in srgb, var(--accent-paylite) 8%, transparent),
         transparent 55%
       ),
       radial-gradient(
-        ellipse 70% 50% at 90% 20%,
-        color-mix(in srgb, var(--accent-cyan) 12%, transparent),
-        transparent 50%
-      ),
-      radial-gradient(
         ellipse 60% 40% at 50% 100%,
-        color-mix(in srgb, var(--bg-panel) 80%, transparent),
+        color-mix(in srgb, var(--bg-panel) 85%, transparent),
         transparent 60%
       ),
       var(--bg-void);
@@ -448,7 +621,7 @@
     position: fixed;
     inset: 0;
     z-index: 1;
-    opacity: 0.035;
+    opacity: 0.055;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
 }

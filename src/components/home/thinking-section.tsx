@@ -1,60 +1,57 @@
 import { Brain, Lightbulb, Target, TrendingUp } from "lucide-react";
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/container";
+import {
+  SectionHeader,
+  SectionShell,
+} from "@/components/layout/section-header";
 
 const pillars = [
   {
     icon: Target,
     label: "Problem",
-    text: "What pain existed — and why a demo or paper wasn't enough.",
+    text: "What hurt, and why a screenshot alone would not answer it.",
     color: "var(--accent-paylite)",
   },
   {
     icon: Lightbulb,
     label: "Approach",
-    text: "Architecture and stack choices with explicit trade-offs.",
+    text: "Architecture, stack choices, and the trade-offs I accepted.",
     color: "var(--accent-cyan)",
   },
   {
     icon: TrendingUp,
     label: "Impact",
-    text: "What changed — live deploy, research rigor, or workflow outcome.",
+    text: "Live deploy, research rigor, or a workflow that actually changed.",
     color: "#a78bfa",
   },
   {
     icon: Brain,
     label: "Production",
-    text: "How you'd scale, secure, and operate it beyond the portfolio.",
+    text: "How I would scale, secure, and operate it beyond the portfolio.",
     color: "#34d399",
   },
 ];
 
 export function ThinkingSection() {
   return (
-    <section className="pb-16 pt-4">
+    <SectionShell>
       <Container>
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-cyan)]">
-            How to read this portfolio
-          </p>
-          <h2 className="mt-4 font-display text-2xl text-[var(--text-primary)] sm:text-3xl">
-            How each project is documented
-          </h2>
-          <p className="mt-4 text-sm leading-[1.7] text-[var(--text-muted)] sm:text-base">
-            {site.thinkingHook}
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow="Case study format"
+          title="Every project tells a full story"
+          description={site.thinkingHook}
+          align="center"
+          className="mx-auto"
+        />
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {pillars.map((pillar) => {
             const Icon = pillar.icon;
             return (
-              <div
-                key={pillar.label}
-                className="glass glass-hover rounded-[var(--radius-card)] p-5"
-              >
+              <div key={pillar.label} className="premium-card p-5 sm:p-6">
                 <div
-                  className="flex size-10 items-center justify-center rounded-lg border border-[var(--border-subtle)]"
+                  className="flex size-10 items-center justify-center rounded-xl border border-[var(--border-subtle)]"
                   style={{
                     background: `color-mix(in srgb, ${pillar.color} 12%, transparent)`,
                   }}
@@ -67,7 +64,7 @@ export function ThinkingSection() {
                 >
                   {pillar.label}
                 </p>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
+                <p className="mt-2 text-sm leading-[1.65] text-[var(--text-muted)]">
                   {pillar.text}
                 </p>
               </div>
@@ -75,6 +72,6 @@ export function ThinkingSection() {
           })}
         </div>
       </Container>
-    </section>
+    </SectionShell>
   );
 }

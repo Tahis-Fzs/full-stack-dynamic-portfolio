@@ -6,20 +6,17 @@ import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { cn } from "@/lib/cn";
 
 function parseNumeric(value: string): number | null {
-  const match = value.match(/\d+/);
-  return match ? Number.parseInt(match[0], 10) : null;
-}
-
-function formatValue(template: string, current: number): string {
-  if (template.includes("+")) return `${current}+`;
-  return String(current);
+  const match = value.match(/[\d.]+/);
+  if (!match) return null;
+  const n = Number.parseFloat(match[0]);
+  return Number.isFinite(n) ? n : null;
 }
 
 function StatValue({ value, run }: { value: string; run: boolean }) {
   const reduceMotion = useReducedMotion();
   const numeric = parseNumeric(value);
   const [display, setDisplay] = useState(
-    reduceMotion || !run || numeric === null ? value : "0",
+    reduceMotion || !run || numeric === null ? value : value.includes(".") ? "0.0" : "0",
   );
 
   useEffect(() => {
@@ -31,11 +28,19 @@ function StatValue({ value, run }: { value: string; run: boolean }) {
     let frame = 0;
     const duration = 900;
     const start = performance.now();
+    const isDecimal = value.includes(".");
 
     const tick = (now: number) => {
       const progress = Math.min(1, (now - start) / duration);
       const eased = 1 - (1 - progress) ** 3;
-      setDisplay(formatValue(value, Math.round(numeric * eased)));
+      const current = numeric * eased;
+      if (value.includes("+")) {
+        setDisplay(`${Math.round(current)}+`);
+      } else if (isDecimal) {
+        setDisplay(current.toFixed(1));
+      } else {
+        setDisplay(String(Math.round(current)));
+      }
       if (progress < 1) frame = requestAnimationFrame(tick);
     };
 
@@ -44,7 +49,7 @@ function StatValue({ value, run }: { value: string; run: boolean }) {
   }, [numeric, reduceMotion, run, value]);
 
   return (
-    <p className="font-display text-2xl text-[var(--accent-cyan)] sm:text-3xl">
+    <p className="font-display text-[clamp(1.75rem,3vw,2.25rem)] leading-none text-[var(--text-primary)]">
       {display}
     </p>
   );
@@ -57,6 +62,7 @@ type HeroStatsProps = {
 export function HeroStats({ run = true }: HeroStatsProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const allStats = site.hero.stats;
 
   useEffect(() => {
     const node = rootRef.current;
@@ -69,7 +75,7 @@ export function HeroStats({ run = true }: HeroStatsProps) {
           observer.disconnect();
         }
       },
-      { threshold: 0.35 },
+      { threshold: 0.2 },
     );
 
     observer.observe(node);
@@ -79,31 +85,29 @@ export function HeroStats({ run = true }: HeroStatsProps) {
   const animate = run && visible;
 
   return (
-    <div
-      ref={rootRef}
-      className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4"
-    >
-      {site.hero.stats.map((stat, index) => (
-        <div
-          key={stat.label}
-          className={cn(
-            "glass rounded-[var(--radius-card)] border border-[var(--border-subtle)] px-4 py-4 sm:px-5 sm:py-5 kinetic-stat",
-          )}
-          style={
-            animate
-              ? ({
-                  "--stat-index": index,
-                  "--stat-delay": "820ms",
-                } as CSSProperties)
-              : undefined
-          }
-        >
-          <StatValue value={stat.value} run={animate} />
-          <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-[var(--text-dim)]">
-            {stat.label}
-          </p>
-        </div>
-      ))}
+    <div ref={rootRef}>
+      <p className="premium-eyebrow mb-4">Credentials at a glance</p>
+      <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 lg:gap-4">
+        {allStats.map((stat, index) => (
+          <div
+            key={stat.label}
+            className={cn("premium-card px-5 py-5 kinetic-stat")}
+            style={
+              animate
+                ? ({
+                    "--stat-index": index,
+                    "--stat-delay": "760ms",
+                  } as CSSProperties)
+                : undefined
+            }
+          >
+            <StatValue value={stat.value} run={animate} />
+            <p className="mt-2 text-[11px] leading-snug text-[var(--text-dim)]">
+              {stat.label}
+            </p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

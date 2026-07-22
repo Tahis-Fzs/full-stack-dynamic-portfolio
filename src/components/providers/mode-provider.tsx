@@ -29,22 +29,13 @@ function readStoredMode(): ExploreMode | null {
   return null;
 }
 
-function prefersReducedMotion(): boolean {
-  if (typeof window === "undefined") return false;
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
 export function ModeProvider({ children }: { children: ReactNode }) {
   const [mode, setModeState] = useState<ExploreMode | null>(null);
   const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     const stored = readStoredMode();
-    if (stored) {
-      setModeState(stored);
-    } else if (prefersReducedMotion()) {
-      setModeState("recruiter");
-    }
+    setModeState(stored ?? "recruiter");
     setHydrated(true);
   }, []);
 
@@ -64,7 +55,7 @@ export function ModeProvider({ children }: { children: ReactNode }) {
     () => ({
       mode,
       resolvedMode,
-      hasChosen: hydrated && mode !== null,
+      hasChosen: hydrated,
       setMode,
       clearMode,
     }),

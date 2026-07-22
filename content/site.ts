@@ -3,7 +3,7 @@ import type { SiteConfig } from "./types";
 export const site: SiteConfig = {
   name: "Md. Shadman Tahsin",
   shortName: "Shadman Tahsin",
-  title: "Studio Tahsin",
+  title: "Tahsin Beyond Level",
   brandName: "Tahsin Beyond Level",
   brandShort: "TBL",
   tagline:

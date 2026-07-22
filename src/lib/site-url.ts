@@ -2,4 +2,4 @@
 
 export const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  "https://studio-tahsin.vercel.app";
+  "https://full-stack-dynamic-portfolio-jet.vercel.app";

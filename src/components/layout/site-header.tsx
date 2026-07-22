@@ -27,15 +27,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-[var(--z-nav)] border-b border-[var(--border-subtle)] bg-[color-mix(in_srgb,var(--bg-void)_82%,transparent)] backdrop-blur-xl">
       <Container as="div" className="flex h-16 items-center justify-between gap-4">
         <Link href="/" className="group flex min-w-0 items-center gap-3">
-          <BrandMark size="sm" />
-          <div className="flex min-w-0 flex-col gap-0.5">
-            <span className="font-display text-lg leading-none tracking-tight text-[var(--text-primary)]">
-              {site.title}
-            </span>
-            <span className="truncate text-[10px] uppercase tracking-[0.2em] text-[var(--text-dim)]">
-              {site.designSystem.name}
-            </span>
-          </div>
+          <BrandMark size="sm" showLabel />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Main">

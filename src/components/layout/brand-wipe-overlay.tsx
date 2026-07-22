@@ -30,13 +30,16 @@ export function BrandWipeOverlay({ phase, blocking = false }: BrandWipeOverlayPr
           phase === "revealing" && "brand-wipe__panel--reveal",
         )}
       >
-        <div className="brand-wipe__mark flex flex-col items-center">
-          <BrandMark size="lg" className="brand-wipe__logo" />
+        <div className="brand-wipe__mark flex flex-col items-center px-6 text-center">
+          <BrandMark size="lg" />
           <p className="brand-wipe__title mt-6 font-display text-3xl text-gradient-signal sm:text-4xl">
-            {site.title}
+            {site.brandName}
           </p>
-          <p className="mt-2 text-[10px] uppercase tracking-[0.28em] text-[var(--text-dim)]">
-            {site.designSystem.name}
+          <p className="mt-2 max-w-sm text-sm text-[var(--text-secondary)]">
+            {site.profileBio}
+          </p>
+          <p className="mt-3 text-[10px] uppercase tracking-[0.28em] text-[var(--text-dim)]">
+            {site.name}
           </p>
           <div className="brand-wipe__bar mt-8 h-px w-32 overflow-hidden rounded-full bg-[var(--border-subtle)]">
             <span className="brand-wipe__bar-fill block h-full origin-left bg-[var(--accent-paylite)]" />

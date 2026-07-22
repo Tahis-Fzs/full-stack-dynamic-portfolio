@@ -2,7 +2,7 @@
 
 import { useActionState } from "react";
 import Link from "next/link";
-import { Github, Linkedin, Mail, MapPin, Send } from "lucide-react";
+import { Facebook, Github, Linkedin, Mail, MapPin, Palette, Phone, Send } from "lucide-react";
 import {
   contactInitialState,
   submitContact,
@@ -25,11 +25,11 @@ export function ContactPageContent() {
             Contact
           </p>
           <h1 className="mt-4 max-w-2xl font-display text-[var(--text-section)] text-[var(--text-primary)]">
-            Let&apos;s talk engineering
+            Let&apos;s work together
           </h1>
           <p className="mt-4 max-w-xl text-[var(--text-muted)]">
-            Open to {site.openTo.toLowerCase()}. Share a role, project, or
-            question — I read every message.
+            Open to {site.openTo.toLowerCase()}. Roles in software engineering,
+            product design, or hybrid UI/UX + dev work — I read every message.
           </p>
         </Container>
       </section>
@@ -108,6 +108,11 @@ export function ContactPageContent() {
                 {site.email}
               </Link>
             </InfoCard>
+            <InfoCard icon={Phone} label="Phone">
+              <Link href={`tel:${site.phone}`} className="hover:text-[var(--accent-cyan)]">
+                {site.phone}
+              </Link>
+            </InfoCard>
             <InfoCard icon={MapPin} label="Location">
               {site.location}
             </InfoCard>
@@ -129,6 +134,26 @@ export function ContactPageContent() {
                 className="hover:text-[var(--accent-cyan)]"
               >
                 Connect on LinkedIn
+              </Link>
+            </InfoCard>
+            <InfoCard icon={Palette} label="Behance">
+              <Link
+                href={site.behanceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--accent-cyan)]"
+              >
+                UI/UX portfolio on Behance
+              </Link>
+            </InfoCard>
+            <InfoCard icon={Facebook} label="Facebook">
+              <Link
+                href={site.facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[var(--accent-cyan)]"
+              >
+                Facebook profile
               </Link>
             </InfoCard>
 

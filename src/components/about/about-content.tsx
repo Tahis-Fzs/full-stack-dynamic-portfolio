@@ -28,14 +28,14 @@ export function AboutPageContent() {
             About
           </p>
           <h1 className="mt-4 max-w-3xl font-display text-[var(--text-section)] leading-[var(--leading-tight)] text-[var(--text-primary)]">
-            Building systems with documented thinking
+            {site.brandName}
           </h1>
-          <p className="mt-6 max-w-2xl text-lg text-[var(--text-secondary)]">
-            {site.positioning}
-          </p>
-          <p className="mt-4 max-w-2xl text-sm leading-relaxed text-[var(--text-muted)]">
-            {site.thinkingHook}
-          </p>
+          <p className="mt-3 text-lg text-[var(--accent-cyan)]">{site.profileRole}</p>
+          <div className="mt-6 max-w-2xl space-y-4 text-sm leading-[1.7] text-[var(--text-muted)] sm:text-base">
+            {site.aboutParagraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+            ))}
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-3 text-sm">
             <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-[var(--text-secondary)]">
@@ -105,6 +105,50 @@ export function AboutPageContent() {
               </div>
             </div>
           </div>
+        </Container>
+      </section>
+
+      <section className="border-y border-[var(--border-subtle)] bg-[var(--bg-elevated)] py-16 sm:py-20">
+        <Container>
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-paylite)]">
+            UI/UX expertise
+          </p>
+          <h2 className="mt-3 font-display text-2xl text-[var(--text-primary)] sm:text-3xl">
+            Design skills
+          </h2>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {site.designSkills.map((skill) => (
+              <div key={skill.title} className="glass rounded-[var(--radius-card)] p-5">
+                <h3 className="font-display text-lg text-[var(--text-primary)]">
+                  {skill.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
+                  {skill.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-20">
+        <Container>
+          <p className="text-xs uppercase tracking-[0.25em] text-[var(--accent-cyan)]">
+            Experience highlights
+          </p>
+          <h2 className="mt-3 font-display text-2xl text-[var(--text-primary)] sm:text-3xl">
+            Beyond coursework
+          </h2>
+          <ul className="mt-8 grid gap-4 sm:grid-cols-3">
+            {site.experiences.map((exp) => (
+              <li key={exp.title} className="glass rounded-[var(--radius-card)] p-5">
+                <h3 className="font-display text-lg text-[var(--text-primary)]">{exp.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-[var(--text-muted)]">
+                  {exp.description}
+                </p>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 

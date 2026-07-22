@@ -27,8 +27,8 @@ export function HeroPortraitTilt({ className }: HeroPortraitTiltProps) {
 
   return (
     <div
-      className={cn("hero-portrait-tilt kinetic-fade-in", className)}
-      style={{ "--fade-delay": "680ms" } as CSSProperties}
+      className={cn("hero-portrait-tilt", !reduceMotion && "kinetic-fade-in", className)}
+      style={!reduceMotion ? ({ "--fade-delay": "280ms" } as CSSProperties) : undefined}
       onMouseMove={(event) => {
         const node = event.currentTarget;
         const rect = node.getBoundingClientRect();

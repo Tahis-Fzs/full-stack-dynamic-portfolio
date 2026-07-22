@@ -49,7 +49,7 @@ export function SiteFooter() {
       </Container>
 
       <Container className="mt-8 flex flex-col gap-2 border-t border-[var(--border-subtle)] pt-6 text-xs text-[var(--text-dim)] sm:flex-row sm:justify-between">
-        <span>© {year} {site.shortName} · {site.designSystem.name} design system</span>
+        <span>© {year} {site.shortName} · {site.brandName}</span>
         <span>Problem → Approach → Impact</span>
       </Container>
     </footer>

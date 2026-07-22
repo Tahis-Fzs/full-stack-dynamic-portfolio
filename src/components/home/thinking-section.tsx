@@ -38,9 +38,9 @@ export function ThinkingSection() {
             How to read this portfolio
           </p>
           <h2 className="mt-4 font-display text-2xl text-[var(--text-primary)] sm:text-3xl">
-            Thinking process, not screenshot gallery
+            How each project is documented
           </h2>
-          <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)] sm:text-base">
+          <p className="mt-4 text-sm leading-[1.7] text-[var(--text-muted)] sm:text-base">
             {site.thinkingHook}
           </p>
         </div>

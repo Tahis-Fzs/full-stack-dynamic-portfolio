@@ -149,6 +149,25 @@
     letter-spacing: -0.03em;
   }
 
+  .hero-name-line {
+    display: block;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .hero-name-line::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 380px) {
+    .hero-name-line {
+      font-size: clamp(2rem, 11vw, var(--text-brand));
+    }
+  }
+
   @keyframes hero-rise {
     from {
       opacity: 0;

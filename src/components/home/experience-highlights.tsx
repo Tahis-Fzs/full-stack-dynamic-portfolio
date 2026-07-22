@@ -1,38 +1,31 @@
 import { site } from "@/content/site";
 import { Container } from "@/components/layout/container";
 
-export function SkillsBento() {
+export function ExperienceHighlights() {
   return (
     <section className="py-14 sm:py-16">
       <Container>
         <div className="max-w-2xl">
           <p className="text-xs uppercase tracking-[0.2em] text-[var(--accent-cyan)]">
-            Stack
+            Experience
           </p>
           <h2 className="mt-3 font-display text-2xl text-[var(--text-primary)] sm:text-3xl">
-            What I use day to day
+            Design practice & real-world work
           </h2>
         </div>
 
-        <div className="mt-8 grid gap-5 sm:grid-cols-2">
-          {site.skillGroups.map((group) => (
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          {site.experiences.map((item) => (
             <div
-              key={group.title}
+              key={item.title}
               className="rounded-[var(--radius-card)] border border-[var(--border-subtle)] bg-[var(--bg-elevated)] p-5 sm:p-6"
             >
-              <p className="font-display text-base text-[var(--text-primary)]">
-                {group.title}
+              <h3 className="font-display text-lg text-[var(--text-primary)]">
+                {item.title}
+              </h3>
+              <p className="mt-2 text-sm leading-[1.65] text-[var(--text-muted)]">
+                {item.description}
               </p>
-              <ul className="mt-3 space-y-2">
-                {group.items.map((item) => (
-                  <li
-                    key={item}
-                    className="text-sm leading-[1.65] text-[var(--text-muted)]"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>

@@ -423,11 +423,15 @@ export const projectCategories: { id: ProjectCategory; label: string }[] = [
   { id: "collab", label: "Collaboration" },
 ];
 
-/** Recruiter home — top 3 thinking-first cards */
+/** Recruiter home — all tier 1 & 2 engineering projects */
 export const recruiterSpotlightSlugs = [
   "paylite-x",
   "studentmove",
   "ckd-multimodal-detection",
+  "retinal-oct-deep-learning",
+  "cicids2017-intrusion-detection",
+  "studentmove-flutter",
+  "agro-culture",
 ];
 
 /** Engineer constellation nodes */

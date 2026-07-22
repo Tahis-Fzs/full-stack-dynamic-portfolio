@@ -1,34 +1,39 @@
 "use client";
 
 import {
-  getProjectBySlug,
-  recruiterSpotlightSlugs,
-} from "@/content/projects";
-import { useExploreMode } from "@/components/providers/mode-provider";
+  useExploreMode } from "@/components/providers/mode-provider";
 import { ConstellationHeroLazy } from "@/components/engineer/constellation-lazy";
 import { EngineerScroll } from "@/components/engineer/engineer-scroll";
+import { DesignPortfolioSection } from "@/components/home/design-portfolio-section";
+import {
+  DesignProcessSection,
+  DesignSkillsSection,
+} from "@/components/home/design-skills-section";
+import { ExperienceHighlights } from "@/components/home/experience-highlights";
+import { HomeAllProjects } from "@/components/home/home-all-projects";
 import {
   EducationStrip,
   HomeBottomCta,
   HomeHero,
 } from "@/components/home/home-sections";
+import { LegacyStatsStrip } from "@/components/home/legacy-stats-strip";
 import { SkillsBento } from "@/components/home/skills-bento";
-import { SpotlightGrid } from "@/components/home/spotlight-grid";
 import { ThinkingSection } from "@/components/home/thinking-section";
 
 export function HomeShell() {
   const { resolvedMode } = useExploreMode();
   const isEngineer = resolvedMode === "engineer";
 
-  const spotlightProjects = recruiterSpotlightSlugs
-    .map((slug) => getProjectBySlug(slug))
-    .filter((p): p is NonNullable<typeof p> => Boolean(p));
-
   const content = (
     <>
       {isEngineer ? <ConstellationHeroLazy /> : <HomeHero />}
+      <LegacyStatsStrip />
       <ThinkingSection />
-      <SpotlightGrid projects={spotlightProjects} />
+      <HomeAllProjects />
+      <DesignPortfolioSection />
+      <ExperienceHighlights />
+      <DesignSkillsSection />
+      <DesignProcessSection />
       <SkillsBento />
       <EducationStrip />
       <HomeBottomCta />

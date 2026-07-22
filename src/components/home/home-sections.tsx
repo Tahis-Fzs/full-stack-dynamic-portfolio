@@ -69,15 +69,14 @@ export function HomeBottomCta() {
           />
           <div className="relative max-w-2xl">
             <p className="text-[10px] uppercase tracking-[0.2em] text-[var(--accent-paylite)]">
-              {site.designSystem.name}
+              {site.brandName}
             </p>
             <h2 className="mt-3 font-display text-2xl text-[var(--text-primary)] sm:text-3xl">
-              Ready to see how I decide, not just what I ship?
+              Want the full story on PayLite X or StudentMove?
             </h2>
-            <p className="mt-4 text-sm leading-relaxed text-[var(--text-muted)] sm:text-base">
-              Every case study documents problem context, stack trade-offs, real
-              challenges, and production thinking — starting with PayLite X and
-              StudentMove live demos.
+            <p className="mt-4 text-sm leading-[1.7] text-[var(--text-muted)] sm:text-base">
+              Case studies cover the problem, architecture choices, and what I
+              would change before production — with live links where available.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link

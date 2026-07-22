@@ -4,37 +4,56 @@ export const site: SiteConfig = {
   name: "Md. Shadman Tahsin",
   shortName: "Shadman Tahsin",
   title: "Studio Tahsin",
+  brandName: "Tahsin Beyond Level",
+  brandShort: "TBL",
   tagline:
-    "Full-stack products & applied ML — from Dhaka transport to digital wallets.",
+    "UI/UX designer & full-stack developer — Figma to Firebase, research to production.",
+  profileRole: "UI/UX Designer · Full-Stack Developer · CSE Graduate",
+  profileBio:
+    "UI/UX Designer · Frontend Developer · Creative Problem Solver",
+  aboutParagraphs: [
+    "Hi, I'm Md. Shadman Tahsin — I design intuitive digital experiences and build the full-stack systems behind them.",
+    "I focus on user-centered design, AI-assisted workflows, and shipping products people can actually use — from PayLite X and StudentMove to multimodal ML research at DIU.",
+    "I'm completing my B.Sc. in Computer Science & Engineering at Daffodil International University (thesis defended, July 2026). I blend Figma prototyping with Python, Flutter, Laravel, and React — so design decisions survive developer handoff.",
+    "I use ChatGPT and AI plugins for copy, naming, and brainstorming — but every interface still gets human review for clarity, accessibility, and real user goals.",
+  ],
   positioning:
-    "Computer Science & Engineering graduate building full-stack systems, mobile apps, and applied machine learning with documented trade-offs.",
+    "CSE graduate at DIU building full-stack apps, mobile clients, and applied ML — with a strong UI/UX foundation from Figma projects and Behance work.",
   thinkingHook:
-    "Your portfolio sells thinking, not screenshots. Every project here follows Problem → Approach → Impact.",
+    "Every project here follows Problem → Approach → Impact — whether it's a live demo, a thesis pipeline, or a Figma case study on Behance.",
   designSystem: {
-    name: "Signal Void",
-    tagline: "Deep midnight void · PayLite signal · cyan patina · Instrument Serif",
+    name: "Tahsin Beyond Level",
+    tagline: "Design · Engineering · Applied ML",
   },
   hero: {
-    role: "Software Developer · CSE graduate · Dhaka",
+    role: "UI/UX · Full-Stack · Mobile · Applied ML",
     headline:
-      "Transit apps. Banking ledgers. Clinical models. Live demos.",
+      "I design interfaces in Figma and ship them in code — fintech wallets, Dhaka transport, clinical ML, and 10+ UI case studies.",
     support:
-      "I build PayLite X, StudentMove, and multimodal ML systems — with field notes that document trade-offs, not just screenshots.",
+      "PayLite X (live ledger demo), StudentMove (Laravel + Firebase GPS), CKD & retinal OCT research, CICIDS intrusion pipelines, Flutter mobile client, AgroCulture marketplace — plus ERP, healthcare, and SaaS UI work on Behance.",
     stats: [
-      { value: "11", label: "Projects documented" },
-      { value: "2", label: "Live demos shipped" },
-      { value: "DIU", label: "CSE · thesis defended" },
-      { value: "5+", label: "Team builds" },
+      { value: "11", label: "GitHub engineering projects" },
+      { value: "10", label: "UI/UX design projects" },
+      { value: "2", label: "Live web demos" },
+      { value: "2026", label: "DIU graduation" },
+    ],
+    legacyStats: [
+      { value: "1.5", label: "Years experience" },
+      { value: "5", label: "Clients worldwide" },
+      { value: "12+", label: "Total projects" },
+      { value: "3.35", label: "DIU CGPA" },
     ],
   },
   location: "Dhaka, Bangladesh",
-  openTo: "Full-time · Entry to mid-level software engineering",
+  openTo: "Full-time · Entry to mid-level software & product roles",
   email: "md.shadmantahsinfzs@gmail.com",
   phone: "01764819519",
   github: "Tahis-Fzs",
   githubUrl: "https://github.com/Tahis-Fzs",
   linkedin: "md-shadman-tahsin-676a862b4",
   linkedinUrl: "https://linkedin.com/in/md-shadman-tahsin-676a862b4",
+  behanceUrl: "https://www.behance.net/mdsha0242220",
+  facebookUrl: "https://www.facebook.com/share/17ZhPouzcB/",
   cvPath: "/cv/Md_Shadman_Tahsin_CV.pdf",
   profileImage: "/profile.jpg",
   education: {
@@ -44,21 +63,91 @@ export const site: SiteConfig = {
     status: "Thesis defended · Certificate awaiting July 2026",
     year: "2026",
   },
+  designSkills: [
+    {
+      title: "User-Centered Design Thinking",
+      description: "Designs that prioritize user needs and business goals",
+    },
+    {
+      title: "Figma Prototyping",
+      description: "Auto-layout, components, and design systems",
+    },
+    {
+      title: "Responsive UI Design",
+      description: "Web, mobile, and dashboard interfaces",
+    },
+    {
+      title: "Wireframing & User Flows",
+      description: "Information architecture and journey mapping",
+    },
+    {
+      title: "Feedback-driven Iteration",
+      description: "Continuous improvement and developer handoff",
+    },
+    {
+      title: "AI-Assisted Design Workflows",
+      description: "Copy, naming, and brainstorming with AI tools",
+    },
+  ],
+  experiences: [
+    {
+      title: "Accenture North America",
+      description:
+        "Product Design Simulation on Forage — feature iteration and UX improvements",
+    },
+    {
+      title: "Real-world Projects",
+      description:
+        "Task-based internships applying practical design thinking to user problems",
+    },
+    {
+      title: "Remote Collaboration",
+      description:
+        "Remote roles and diverse product teams — StudentMove, CodeKotha, and client UI work",
+    },
+  ],
+  designProcess: [
+    {
+      step: "01",
+      title: "Research",
+      detail: "User interviews, competitor review, and problem framing",
+    },
+    {
+      step: "02",
+      title: "Wireframing",
+      detail: "Low-fidelity flows and information architecture",
+    },
+    {
+      step: "03",
+      title: "Prototyping",
+      detail: "High-fidelity Figma with components and auto-layout",
+    },
+    {
+      step: "04",
+      title: "Feedback",
+      detail: "Usability review and iteration with stakeholders",
+    },
+    {
+      step: "05",
+      title: "Handoff",
+      detail: "Developer-ready specs, assets, and interaction notes",
+    },
+  ],
   skillGroups: [
     {
       title: "Programming & Development",
       items: [
         "Python, C/C++, PHP, Dart, JavaScript, TypeScript",
         "Flutter · Firebase (Auth, Firestore, Functions)",
-        "PHP/MySQL · REST APIs · Full-stack modules",
+        "React · Next.js · Laravel · PHP/MySQL · REST APIs",
       ],
     },
     {
-      title: "Tools & Workflow",
+      title: "Design & Frontend",
       items: [
-        "Git & GitHub",
-        "Jupyter / Colab",
-        "Docker · CI · Cloud deploy (Render, Vercel)",
+        "Figma · Wireframes · Design systems · Responsive UI",
+        "HTML, CSS, Tailwind · Blade · Component libraries",
+        "AI-assisted copy and iteration workflows",
       ],
     },
     {
@@ -66,13 +155,14 @@ export const site: SiteConfig = {
       items: [
         "Deep learning (CNN, EfficientNet, MobileNet)",
         "Multimodal ML · Calibration · SHAP explainability",
-        "Intrusion & insider-threat detection pipelines",
+        "CICIDS2017 intrusion & insider-threat pipelines",
       ],
     },
     {
-      title: "Professional",
+      title: "Tools & DevOps",
       items: [
-        "Object-oriented design · Debugging",
+        "Git & GitHub · Jupyter / Colab",
+        "Docker · CI · Render · Vercel deploy",
         "Team collaboration · Technical communication",
       ],
     },
@@ -90,7 +180,7 @@ export const site: SiteConfig = {
       title: "StudentMove deployed",
       org: "5-member team",
       detail:
-        "Smart transport PWA for Dhaka students — Laravel, Firebase GPS, SSLCommerz.",
+        "Smart transport PWA for Dhaka students — Laravel, Firebase GPS, SSLCommerz, Flutter app.",
     },
     {
       year: "2025",
@@ -98,6 +188,12 @@ export const site: SiteConfig = {
       org: "DIU CSE",
       detail:
         "Multimodal CKD framework, retinal OCT classification, CICIDS2017 intrusion pipelines.",
+    },
+    {
+      year: "2025",
+      title: "Accenture Forage simulation",
+      org: "Product design",
+      detail: "Feature iteration and UX improvements in a product design simulation.",
     },
     {
       year: "2023–2025",
@@ -116,9 +212,9 @@ export const site: SiteConfig = {
     "Basic Etiquette for Better Personality — GoEdu (2025)",
   ],
   seo: {
-    title: "Md. Shadman Tahsin — Studio Tahsin | Full-Stack & Applied ML",
+    title: "Md. Shadman Tahsin — Tahsin Beyond Level | UI/UX & Full-Stack",
     description:
-      "Portfolio of Md. Shadman Tahsin — PayLite X fintech demo, StudentMove transport platform, multimodal ML research. Problem-driven case studies with live demos.",
+      "Portfolio of Md. Shadman Tahsin — PayLite X, StudentMove, multimodal ML, and 10+ UI/UX projects on Behance. Design and engineering case studies with live demos.",
     ogImage: "/og/studio-tahsin.png",
   },
 };

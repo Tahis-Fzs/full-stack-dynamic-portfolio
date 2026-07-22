@@ -63,11 +63,42 @@ export interface HeroStat {
   label: string;
 }
 
+export interface DesignSkill {
+  title: string;
+  description: string;
+}
+
+export interface ExperienceHighlight {
+  title: string;
+  description: string;
+}
+
+export interface DesignProject {
+  slug: string;
+  title: string;
+  description: string;
+  category: string;
+  techTags: string[];
+  featured: boolean;
+  behanceUrl?: string;
+}
+
+export interface DesignProcessStep {
+  step: string;
+  title: string;
+  detail: string;
+}
+
 export interface SiteConfig {
   name: string;
   shortName: string;
   title: string;
+  brandName: string;
+  brandShort: string;
   tagline: string;
+  profileRole: string;
+  profileBio: string;
+  aboutParagraphs: string[];
   positioning: string;
   thinkingHook: string;
   designSystem: {
@@ -79,6 +110,7 @@ export interface SiteConfig {
     headline: string;
     support: string;
     stats: HeroStat[];
+    legacyStats: HeroStat[];
   };
   location: string;
   openTo: string;
@@ -88,6 +120,8 @@ export interface SiteConfig {
   githubUrl: string;
   linkedin: string;
   linkedinUrl: string;
+  behanceUrl: string;
+  facebookUrl: string;
   cvPath: string;
   profileImage: string;
   education: {
@@ -98,6 +132,9 @@ export interface SiteConfig {
     year: string;
   };
   skillGroups: SkillGroup[];
+  designSkills: DesignSkill[];
+  experiences: ExperienceHighlight[];
+  designProcess: DesignProcessStep[];
   timeline: TimelineEntry[];
   contests: string[];
   training: string[];

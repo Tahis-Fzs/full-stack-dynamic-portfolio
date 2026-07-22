@@ -5,6 +5,7 @@ import type { ExploreMode } from "@/content/types";
 import { site } from "@/content/site";
 import { useExploreMode } from "@/components/providers/mode-provider";
 import { Container } from "@/components/layout/container";
+import { ProfilePhoto } from "@/components/layout/profile-photo";
 import { cn } from "@/lib/cn";
 
 const modes: {
@@ -53,7 +54,11 @@ export function ModeEntry() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-4 py-1.5 text-xs text-[var(--text-muted)]">
             <Sparkles className="size-3.5 text-[var(--accent-cyan)]" aria-hidden />
-            Welcome to {site.title}
+            Welcome to {site.brandName}
+          </div>
+
+          <div className="mb-8 flex justify-center sm:mb-6">
+            <ProfilePhoto size="lg" priority className="ring-2 ring-[var(--border-signal)]" />
           </div>
 
           <h1
@@ -64,8 +69,9 @@ export function ModeEntry() {
             <span className="text-gradient-cyan">explore</span>?
           </h1>
 
-          <p className="mx-auto mt-5 max-w-xl text-base text-[var(--text-muted)] sm:text-lg">
-            {site.thinkingHook}
+          <p className="mx-auto mt-5 max-w-xl text-base leading-[1.65] text-[var(--text-muted)] sm:text-lg">
+            Pick a quick scan for hiring, or the full engineer view with 3D
+            navigation and deeper case studies.
           </p>
         </div>
 
